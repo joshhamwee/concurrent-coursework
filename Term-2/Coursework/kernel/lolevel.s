@@ -1,7 +1,7 @@
 /* Copyright (C) 2017 Daniel Page <csdsp@bristol.ac.uk>
  *
- * Use of this source code is restricted per the CC BY-NC-ND license, a copy of 
- * which can be found via http://creativecommons.org (and should be included as 
+ * Use of this source code is restricted per the CC BY-NC-ND license, a copy of
+ * which can be found via http://creativecommons.org (and should be included as
  * LICENSE.txt within the associated archive or repository).
  */
 
@@ -38,4 +38,4 @@ lolevel_handler_svc: sub   lr, lr, #0              @ correct return address
                      bl    hilevel_handler_svc     @ invoke high-level C function
 
                      ldmfd sp!, { r0-r3, ip, lr }  @ restore caller-save registers
-                     movs  pc, lr                  @ return from interrupt 
+                     movs  pc, lr                  @ return from interrupt
