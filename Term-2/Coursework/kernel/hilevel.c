@@ -17,7 +17,8 @@
  *   to execute.
  */
 
-pcb_t pcb[ 2 ]; pcb_t* current = NULL;
+pcb_t pcb[ 3 ]; pcb_t* current = NULL;
+int amountPrograms = 3;
 
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   char prev_pid = '?', next_pid = '?';
@@ -44,18 +45,36 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
 }
 
 void schedule( ctx_t* ctx ) {
-  if     ( current->pid == pcb[ 0 ].pid ) {
-    dispatch( ctx, &pcb[ 0 ], &pcb[ 1 ] );      // context switch P_1 -> P_2
 
-    pcb[ 0 ].status = STATUS_READY;             // update   execution status  of P_1
-    pcb[ 1 ].status = STATUS_EXECUTING;         // update   execution status  of P_2
-  }
-  else if( current->pid == pcb[ 1 ].pid ) {
-    dispatch( ctx, &pcb[ 1 ], &pcb[ 0 ] );      // context switch P_2 -> P_1
+  for (size_t i = 0; i < amountPrograms; i++) {
+    if     ( current->pid == pcb[ i ].pid ) {
+      int nextProgram = (i+1)%amountPrograms;
+      dispatch( ctx, &pcb[ i ], &pcb[ nextProgram ] );      // context switch P_i -> P_i+1
 
-    pcb[ 1 ].status = STATUS_READY;             // update   execution status  of P_2
-    pcb[ 0 ].status = STATUS_EXECUTING;         // update   execution status  of P_1
+      pcb[ i ].status = STATUS_READY;             // update   execution status  of P_i
+      pcb[ nextProgram ].status = STATUS_EXECUTING;         // update   execution status  of P_i+1
+      break;
+    }
   }
+
+  // if     ( current->pid == pcb[ 0 ].pid ) {
+  //   dispatch( ctx, &pcb[ 0 ], &pcb[ 1 ] );      // context switch P_1 -> P_2
+  //
+  //   pcb[ 0 ].status = STATUS_READY;             // update   execution status  of P_1
+  //   pcb[ 1 ].status = STATUS_EXECUTING;         // update   execution status  of P_2
+  // }
+  // else if( current->pid == pcb[ 1 ].pid ) {
+  //   dispatch( ctx, &pcb[ 1 ], &pcb[ 2 ] );      // context switch P_4 -> P_5
+  //
+  //   pcb[ 1 ].status = STATUS_READY;             // update   execution status  of P_2
+  //   pcb[ 2 ].status = STATUS_EXECUTING;         // update   execution status  of P_1
+  // }
+  // else if(current->pid == pcb[ 2 ].pid){
+  //   dispatch(ctx, &pcb[ 2 ], &pcb[ 0 ]);
+  //
+  //   pcb[ 2 ].status = STATUS_READY;             // update   execution status  of P_2
+  //   pcb[ 0 ].status = STATUS_EXECUTING;         // update   execution status  of P_1
+  // }
 
   return;
 }
@@ -64,6 +83,8 @@ extern void     main_P3();
 extern uint32_t tos_P3;
 extern void     main_P4();
 extern uint32_t tos_P4;
+extern void     main_P5();
+extern uint32_t tos_P5;
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
   /* Initialise two PCBs, representing user processes stemming from execution
@@ -87,6 +108,13 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 1 ].ctx.cpsr = 0x50;
   pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P4 );
   pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P4  );
+
+  memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 1-st PCB = P_2
+  pcb[ 2 ].pid      = 5;
+  pcb[ 2 ].status   = STATUS_CREATED;
+  pcb[ 2 ].ctx.cpsr = 0x50;
+  pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
+  pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
