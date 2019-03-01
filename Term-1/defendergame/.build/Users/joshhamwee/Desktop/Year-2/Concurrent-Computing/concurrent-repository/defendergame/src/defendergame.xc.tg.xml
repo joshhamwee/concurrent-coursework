@@ -1,0 +1,150 @@
+<taskgraph>
+<task>
+  <name>delay_seconds</name>
+  <inFunction>delay_seconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_milliseconds</name>
+  <inFunction>delay_milliseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_microseconds</name>
+  <inFunction>delay_microseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>showLEDs</name>
+  <inFunction>showLEDs</inFunction>
+</task>
+<task>
+  <name>buttonListener</name>
+  <inFunction>buttonListener</inFunction>
+</task>
+<task>
+  <name>waitMoment</name>
+  <inFunction>waitMoment</inFunction>
+</task>
+<task>
+  <name>consolePrint</name>
+  <inFunction>consolePrint</inFunction>
+  <endOfSeqCalledFunction>printstr</endOfSeqCalledFunction>
+</task>
+<task>
+  <name>visualiser</name>
+  <inFunction>visualiser</inFunction>
+</task>
+<task>
+  <name>userAnt</name>
+  <inFunction>userAnt</inFunction>
+</task>
+<task>
+  <name>attackerAnt</name>
+  <inFunction>attackerAnt</inFunction>
+</task>
+<task>
+  <name>controller</name>
+  <inFunction>controller</inFunction>
+</task>
+<task>
+  <name>main</name>
+  <inFunction>main</inFunction>
+</task>
+<task>
+  <name>_task_userAnt_0</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>userAnt</calledFunction>
+  <tile>tile[1]</tile>
+  <core>1</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_attackerAnt_1</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>attackerAnt</calledFunction>
+  <tile>tile[1]</tile>
+  <core>2</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_controller_2</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>controller</calledFunction>
+  <tile>tile[1]</tile>
+  <core>3</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_buttonListener_3</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>buttonListener</calledFunction>
+  <tile>tile[0]</tile>
+  <core>4</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_visualiser_4</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>visualiser</calledFunction>
+  <tile>tile[0]</tile>
+  <core>5</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_showLEDs_5</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>showLEDs</calledFunction>
+  <tile>tile[0]</tile>
+  <core>6</core>
+  <inPar/>
+</task>
+<connection>
+  <ends>
+    <end task="_task_userAnt_0" type="chan"/>
+    <end task="_task_buttonListener_3" type="chan"/>
+  </ends>
+  <name>buttonsToUserAnt</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_userAnt_0" type="chan"/>
+    <end task="_task_visualiser_4" type="chan"/>
+  </ends>
+  <name>userAntToVisualiser</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_userAnt_0" type="chan"/>
+    <end task="_task_controller_2" type="chan"/>
+  </ends>
+  <name>userAntToController</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_attackerAnt_1" type="chan"/>
+    <end task="_task_visualiser_4" type="chan"/>
+  </ends>
+  <name>attackerAntToVisualiser</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_attackerAnt_1" type="chan"/>
+    <end task="_task_controller_2" type="chan"/>
+  </ends>
+  <name>attackerAntToController</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_visualiser_4" type="chan"/>
+    <end task="_task_showLEDs_5" type="chan"/>
+  </ends>
+  <name>visualiserToLEDs</name>
+</connection>
+</taskgraph>

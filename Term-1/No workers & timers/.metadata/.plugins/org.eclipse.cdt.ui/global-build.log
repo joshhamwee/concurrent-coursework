@@ -1,0 +1,4123 @@
+14:26:03 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/joshhamwee/Desktop/Year-2/Concurrent-Computing/concurrent-repository/COMS20001/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/joshhamwee/Desktop/Year-2/Concurrent-Computing/concurrent-repository/COMS20001/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+14:26:10 **** Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:26:10 **** Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:26:10 **** Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:205:27: error: too few arguments to function `DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                          ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:51:10 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:11 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:11 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:205:27: error: too few arguments to function `DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                          ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:51:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:51:44 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:44 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:44 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:51:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:52:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:52:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:56:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:215:1: error: use of `buttons' violates parallel usage rules
+par {
+^~~
+../src/main.xc:221:23: note: violation occurs here
+    buttonListenerSW1(buttons,c_SW1);
+                      ^~~~~~~
+../src/main.xc:222:23: note: violation occurs here
+    buttonListenerSW2(buttons,c_SW2);
+                      ^~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:56:12 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:56:12 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:56:12 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:56:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:215:1: error: use of `buttons' violates parallel usage rules
+par {
+^~~
+../src/main.xc:221:23: note: violation occurs here
+    buttonListenerSW1(buttons,c_SW1);
+                      ^~~~~~~
+../src/main.xc:222:23: note: violation occurs here
+    buttonListenerSW2(buttons,c_SW2);
+                      ^~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:59:01 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:214:5: error: unknown function identifier `buttonListenerSW1' (possibly missing prototype?)
+    buttonListenerSW1(buttons,c_SW1,c_SW2);
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:59:01 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:02 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:02 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:59:20 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:20 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:20 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:59:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:00:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:00:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:01:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:02:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:13:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:98:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:98:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:13:29 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:29 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:29 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:18:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:98:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:98:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:18:09 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:09 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:10 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:28:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:64: error: parse error before "fromSW2"
+void distributor(chanend c_in, chanend c_out, chanend fromAcc, fromSW2)
+                                                               ^
+../src/main.xc:116:7: error: use of undeclared identifer `c_fromSW2'
+      c_fromSW2 :> buttonSW2Pressed;
+      ^
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:228:44: error: too many arguments to function `distributor'
+    distributor(c_inIO, c_outIO, c_control,c_SW2Distributer);//thread to coordinate work on image
+                                           ^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:28:48 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:48 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:48 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:64: error: parse error before "fromSW2"
+void distributor(chanend c_in, chanend c_out, chanend fromAcc, fromSW2)
+                                                               ^
+../src/main.xc:116:7: error: use of undeclared identifer `c_fromSW2'
+      c_fromSW2 :> buttonSW2Pressed;
+      ^
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:228:44: error: too many arguments to function `distributor'
+    distributor(c_inIO, c_outIO, c_control,c_SW2Distributer);//thread to coordinate work on image
+                                           ^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:116:7: error: use of undeclared identifer `c_fromSW2'
+      c_fromSW2 :> buttonSW2Pressed;
+      ^
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:19 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:20 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:20 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:116:7: error: use of undeclared identifer `c_fromSW2'
+      c_fromSW2 :> buttonSW2Pressed;
+      ^
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:29:46 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:46 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:47 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:29:49 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:30:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:30:15 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:15 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:15 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:35:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:100:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:100:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+../src/main.xc:215:1: error: use of `buttonSW2Pressed' violates parallel usage rules
+par {
+^~~
+../src/main.xc:114:9: note: object used here
+  while(buttonSW2Pressed == 0){
+        ^~~~~~~~~~~~~~~~
+../src/main.xc:131:3: note: object used here
+  buttonSW2Pressed = 1;
+  ^~~~~~~~~~~~~~~~
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:35:30 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:35:31 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:35:31 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:35:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+../src/main.xc:215:1: error: use of `buttonSW2Pressed' violates parallel usage rules
+par {
+^~~
+../src/main.xc:114:9: note: object used here
+  while(buttonSW2Pressed == 0){
+        ^~~~~~~~~~~~~~~~
+../src/main.xc:131:3: note: object used here
+  buttonSW2Pressed = 1;
+  ^~~~~~~~~~~~~~~~
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:36:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Creating game_of_life.xe
+../src/main.xc:215:1: error: use of `buttonSW2Pressed' violates parallel usage rules
+par {
+^~~
+../src/main.xc:115:9: note: object used here
+  while(buttonSW2Pressed == 0){
+        ^~~~~~~~~~~~~~~~
+../src/main.xc:50:9: note: object used here
+        buttonSW2Pressed = 1;
+        ^~~~~~~~~~~~~~~~
+  called by usage.anon.15
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:36:10 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:36:11 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:36:11 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:36:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+../src/main.xc:215:1: error: use of `buttonSW2Pressed' violates parallel usage rules
+par {
+^~~
+../src/main.xc:115:9: note: object used here
+  while(buttonSW2Pressed == 0){
+        ^~~~~~~~~~~~~~~~
+../src/main.xc:50:9: note: object used here
+        buttonSW2Pressed = 1;
+        ^~~~~~~~~~~~~~~~
+  called by usage.anon.15
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:41:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:101:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+Creating game_of_life.xe
+Build Complete
+15:41:14 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:41:15 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:41:15 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:104:7: error: output to a variable that is neither a channel nor port
+      val <: fromButtons;
+      ^~~
+../src/main.xc:135:3: error: use of undeclared identifer `c_fromSW2'
+  c_fromSW2 :> int value;
+  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:17:29 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:29 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:29 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:104:7: error: output to a variable that is neither a channel nor port
+      val <: fromButtons;
+      ^~~
+../src/main.xc:135:3: error: use of undeclared identifer `c_fromSW2'
+  c_fromSW2 :> int value;
+  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:18:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:18:19 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:19 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:19 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:18:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:18:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:19:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:19:31 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:19:31 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:19:31 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:19:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:20:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:20:49 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:20:50 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:20:50 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:21:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:21:49 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:21:50 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:21:50 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:21:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:22:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:22:13 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:13 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:13 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:23:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:23:33 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:33 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:33 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:23:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:23:55 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:55 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:55 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:24:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:24:21 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:24:21 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:24:21 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:24:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:31:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:120:11: error: case not terminated with a break or return
+          case fromButtons :> val:
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:31:33 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:33 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:33 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:120:11: error: case not terminated with a break or return
+          case fromButtons :> val:
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:32:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:32:18 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:32:18 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:32:18 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:32:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:49:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:133:11: error: case not terminated with a break or return
+          case fromButtons :> val:
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:141:11: error: case not terminated with a break or return
+          case fromAcc :> val:
+          ^~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:49:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:49:52 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:52 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:52 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:50:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:50:45 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:50:45 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:50:45 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:51:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:52:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:52:16 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:52:16 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:52:16 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:52:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:54:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:54:06 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:06 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:06 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:56:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:56:16 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:16 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:16 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:56:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:58:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:58:44 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:45 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:45 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:00:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:00:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:00:28 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:00:28 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:00:28 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:00:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:01:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:02:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:02:21 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:02:21 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:02:21 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:02:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:03:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+16:03:09 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:03:09 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:03:10 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:03:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:16:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:272:49: error: too few arguments to function `distributor'
+        distributor(c_inIO, c_outIO, c_control, c_buttons); //thread to coordinate work on image
+                                                ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:16:32 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:32 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:32 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:272:49: error: too few arguments to function `distributor'
+        distributor(c_inIO, c_outIO, c_control, c_buttons); //thread to coordinate work on image
+                                                ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:16:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:17:00 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:00 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:00 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:59:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:211:37: error: unknown function identifier `NewCellState' (possibly missing prototype?)
+                      world[x][y] = NewCellState(microWorld);
+                                    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:59:50 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:51 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:51 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:59:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:211:37: error: unknown function identifier `NewCellState' (possibly missing prototype?)
+                      world[x][y] = NewCellState(microWorld);
+                                    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:00:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+xmake[1]: *** [bin//game_of_life.xe] Terminated: 15
+xmake: *** [bin//game_of_life.xe] Terminated: 15
+Command canceled
+15:00:48 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:02:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:197:34: error: passing integer as unsafe pointer to argument 1 of `printf' outside of unsafe region
+                          printf(world[x][y]);
+                                 ^~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:02:16 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:02:17 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:02:17 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:02:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:197:34: error: passing integer as unsafe pointer to argument 1 of `printf' outside of unsafe region
+                          printf(world[x][y]);
+                                 ^~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:03:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:03:45 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:03:45 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:03:45 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:03:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:05:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:05:29 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:05:29 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:05:29 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:05:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:07:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:07:30 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:07:30 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:07:30 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:07:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:16:59 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:17:03 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:04 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:04 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:17:06 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:22:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:22:43 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:44 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:44 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:01 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:23:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:23:45 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:46 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:46 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:23:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:24:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:24:59 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:25:00 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:25:00 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:25:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:27:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:27:58 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:27:58 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:27:58 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:28:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:28:32 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:32 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:32 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:28:43 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:43 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:43 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:28:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:30:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:30:40 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:40 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:41 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:30:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:31:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:31:29 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:30 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:30 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:31:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:31:59 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:59 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:31:59 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:32:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:33:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:39:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:39:30 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:39:30 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:39:30 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:41:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:42:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:42:07 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:42:08 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:42:08 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:42:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:44:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:44:34 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:44:35 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:44:35 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:44:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:46:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:46:39 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:46:39 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:46:39 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:46:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:48:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:48:59 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:00 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:00 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:49:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:50:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:50:23 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:50:23 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:50:23 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:50:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:53:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:54:02 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:02 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:02 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:54:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:56:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:56:47 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:48 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:48 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:56:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:58:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:320:48: warning: unused variable `c_startoutput' [-Wunused-variable]
+    chan c_inIO, c_outIO, c_control, c_buttons,c_startoutput;             //extend your channel definitions here
+                                               ^~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:320:48: warning: unused variable `c_startoutput' [-Wunused-variable]
+    chan c_inIO, c_outIO, c_control, c_buttons,c_startoutput;             //extend your channel definitions here
+                                               ^~~~~~~~~~~~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+xmake[1]: *** [bin//game_of_life.xe] Terminated: 15
+xmake: *** [bin//game_of_life.xe] Terminated: 15
+Command canceled
+15:58:13 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:58:16 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:17 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:17 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:58:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:59:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:06:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:262:7: error: invalid lvalue in assignment
+      outfname = strcat(log_number,outfname);
+      ^~~~~~~~
+../src/main.xc:262:25: error: incompatible type for argument 1 of `_safe_strcat'
+      outfname = strcat(log_number,outfname);
+                        ^~~~~~~~~~
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:262:16: error: incompatible types in assignment
+      outfname = strcat(log_number,outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:06:33 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:06:34 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:06:34 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:07:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:262:7: error: invalid lvalue in assignment
+      outfname = strcat(log_number,outfname);
+      ^~~~~~~~
+../src/main.xc:262:25: error: incompatible type for argument 1 of `_safe_strcat'
+      outfname = strcat(log_number,outfname);
+                        ^~~~~~~~~~
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:262:16: error: incompatible types in assignment
+      outfname = strcat(log_number,outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:07:02 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:07:03 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:07:03 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:08:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:262:7: error: invalid lvalue in assignment
+      outfname = strcat(iota(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:262:25: error: unknown function identifier `iota' (possibly missing prototype?)
+      outfname = strcat(iota(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:262:16: error: incompatible types in assignment
+      outfname = strcat(iota(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:08:46 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:08:46 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:08:46 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:08:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:262:7: error: invalid lvalue in assignment
+      outfname = strcat(iota(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:262:25: error: unknown function identifier `iota' (possibly missing prototype?)
+      outfname = strcat(iota(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:262:16: error: incompatible types in assignment
+      outfname = strcat(iota(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:09:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:262:7: error: invalid lvalue in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:262:25: error: unknown function identifier `itoa' (possibly missing prototype?)
+      outfname = strcat(itoa(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:262:16: error: incompatible types in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:09:10 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:09:10 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:09:10 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:09:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:264:7: error: invalid lvalue in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:264:25: error: unknown function identifier `itoa' (possibly missing prototype?)
+      outfname = strcat(itoa(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:264:16: error: incompatible types in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:09:56 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:09:56 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:09:56 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:11:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:265:7: error: invalid lvalue in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:265:25: error: unknown function identifier `itoa' (possibly missing prototype?)
+      outfname = strcat(itoa(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:265:16: error: incompatible types in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:11:02 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:11:03 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:11:03 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:11:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:265:7: error: invalid lvalue in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ^~~~~~~~
+../src/main.xc:265:25: error: unknown function identifier `itoa' (possibly missing prototype?)
+      outfname = strcat(itoa(log_number),outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:265:16: error: incompatible types in assignment
+      outfname = strcat(itoa(log_number),outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:12:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:267:7: error: invalid lvalue in assignment
+      outfname = strcat(c,outfname);
+      ^~~~~~~~
+../src/main.xc:267:25: error: incompatible type for argument 1 of `_safe_strcat'
+      outfname = strcat(c,outfname);
+                        ^
+/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:17:37: note: expanded from macro 'strcat'
+#define strcat(s1, s2) _safe_strcat(s1, s2)
+                                    ^
+../src/main.xc:267:16: error: incompatible types in assignment
+      outfname = strcat(c,outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:12:33 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:12:33 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:12:33 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:12:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:242:12: error: array size missing in 'c'
+      char c[];
+           ^~~
+../src/main.xc:266:7: error: invalid lvalue in assignment
+      c = log_number;
+      ^
+../src/main.xc:266:9: error: incompatible types in assignment
+      c = log_number;
+      ~~^~~~~~~~~~~~
+../src/main.xc:267:7: error: invalid lvalue in assignment
+      outfname = strcat(c,outfname);
+      ^~~~~~~~
+../src/main.xc:267:16: error: incompatible types in assignment
+      outfname = strcat(c,outfname);
+      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:12:47 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:12:47 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:12:47 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:15:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:15:14 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:15:14 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:15:14 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:15:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:15:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:16:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:16:36 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:16:36 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:16:36 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:16:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:21:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+16:21:42 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:21:42 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:21:43 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:21:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:23:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+16:23:40 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:23:41 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:23:41 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+16:23:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:17:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:240:30: error: invalid lvalue in assignment
+      if(exportCounter == 1) outfname = "testout2.pgm";
+                             ^~~~~~~~
+../src/main.xc:240:39: error: incompatible types in assignment
+      if(exportCounter == 1) outfname = "testout2.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:241:35: error: invalid lvalue in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ^~~~~~~~
+../src/main.xc:241:44: error: incompatible types in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:17:57 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:17:58 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:17:58 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:18:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:240:30: error: invalid lvalue in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ^~~~~~~~
+../src/main.xc:240:39: error: incompatible types in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~
+../src/main.xc:241:35: error: invalid lvalue in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ^~~~~~~~
+../src/main.xc:241:44: error: incompatible types in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:242:35: error: invalid lvalue in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ^~~~~~~~
+../src/main.xc:242:44: error: incompatible types in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:19:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:240:39: error: parse error before ']' token
+      if(exportCounter == 0) outfname[] = "testout.pgm";
+                                      ^
+../src/main.xc:241:7: error: parse error before "else"
+      else if(exportCounter == 1) outfname[] = "testout2.pgm";
+      ^
+../src/main.xc:242:7: error: parse error before "else"
+      else if(exportCounter == 2) outfname[] = "testout3.pgm";
+      ^
+../src/main.xc:270:3: error: parse error before "return"
+  return;
+  ^
+../src/main.xc:271:1: error: parse error before '}' token
+}
+^
+../src/main.xc:284:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:284:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:284:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:284:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:285:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:287:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:291:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:293:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:301:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:304:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:307:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:310:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:310:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:310:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:327:10: error: global variable `c_inIO' has type chan
+    chan c_inIO, c_outIO, c_control, c_buttons;             //extend your channel definitions here
+         ^~~~~~
+../src/main.xc:327:18: error: global variable `c_outIO' has type chan
+    chan c_inIO, c_outIO, c_control, c_buttons;             //extend your channel definitions here
+                 ^~~~~~~
+../src/main.xc:327:27: error: global variable `c_control' has type chan
+    chan c_inIO, c_outIO, c_control, c_buttons;             //extend your channel definitions here
+                          ^~~~~~~~~
+../src/main.xc:327:38: error: global variable `c_buttons' has type chan
+    chan c_inIO, c_outIO, c_control, c_buttons;             //extend your channel definitions here
+                                     ^~~~~~~~~
+../src/main.xc:329:5: error: parse error before "par"
+    par {
+    ^
+../src/main.xc:331:21: error: parse error before "i2c"
+        orientation(i2c[0],c_control);                      //client thread reading orientation data
+                    ^
+../src/main.xc:331:9: warning: return type defaults to `int' [-Wreturn-type]
+        orientation(i2c[0],c_control);                      //client thread reading orientation data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:332:22: error: parse error before "infname"
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+                     ^
+../src/main.xc:332:9: warning: return type defaults to `int' [-Wreturn-type]
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:332:9: error: conflicting types for 'DataInStream'
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:93:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:333:23: error: parse error before "outfname"
+        DataOutStream(outfname, c_outIO);                   //thread to write out a PGM image
+                      ^
+../src/main.xc:333:9: warning: return type defaults to `int' [-Wreturn-type]
+        DataOutStream(outfname, c_outIO);                   //thread to write out a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:333:9: error: conflicting types for 'DataOutStream'
+        DataOutStream(outfname, c_outIO);                   //thread to write out a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:6: note: previous definition of 'DataOutStream' was here
+void DataOutStream(char outfname[], chanend c_in)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:334:21: error: parse error before "c_inIO"
+        distributor(c_inIO, c_outIO, c_control, c_buttons); //thread to coordinate work on image
+                    ^
+../src/main.xc:334:9: warning: return type defaults to `int' [-Wreturn-type]
+        distributor(c_inIO, c_outIO, c_control, c_buttons); //thread to coordinate work on image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:334:9: error: conflicting types for 'distributor'
+        distributor(c_inIO, c_outIO, c_control, c_buttons); //thread to coordinate work on image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc, chanend fromButtons)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:335:24: error: parse error before "buttons"
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+                       ^
+../src/main.xc:335:9: warning: return type defaults to `int' [-Wreturn-type]
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:335:9: error: conflicting types for 'buttonListener'
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:44:6: note: previous definition of 'buttonListener' was here
+void buttonListener(in port b, chanend toDistributer) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:340:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:19:10 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:19:10 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:19:10 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:21:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:39: error: assignment to restricted pointer
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~
+../src/main.xc:240:44: error: assignment to restricted pointer
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:241:44: error: assignment to restricted pointer
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:21:36 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:21:36 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:21:37 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:39: error: assignment to restricted pointer
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~
+../src/main.xc:240:44: error: assignment to restricted pointer
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:241:44: error: assignment to restricted pointer
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:23:06 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:06 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:06 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:30: error: invalid lvalue in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ^~~~~~~~
+../src/main.xc:239:39: error: incompatible types in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~
+../src/main.xc:240:35: error: invalid lvalue in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ^~~~~~~~
+../src/main.xc:240:44: error: incompatible types in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:241:35: error: invalid lvalue in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ^~~~~~~~
+../src/main.xc:241:44: error: incompatible types in assignment
+      else if(exportCounter == 2) outfname = "testout3.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:246:26: error: incompatible type for argument 1 of `_openoutpgm'
+      res = _openoutpgm( outfname, IMWD, IMHT );
+                         ^~~~~~~~
+../src/main.xc:325:9: error: cannot declare array of aliasing pointers
+    char* outfname[] = "testout.pgm";                        //put your output image path here
+        ^~~~~~~~~~~~
+../src/main.xc:325:24: error: invalid array initializer
+    char* outfname[] = "testout.pgm";                        //put your output image path here
+                       ^~~~~~~~~~~~~
+../src/main.xc:325:9: error: array size missing in 'outfname'
+    char* outfname[] = "testout.pgm";                        //put your output image path here
+        ^~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:23:28 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:29 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:23:29 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:24:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:30: error: invalid lvalue in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ^~~~~~~~
+../src/main.xc:239:39: error: incompatible types in assignment
+      if(exportCounter == 0) outfname = "testout.pgm";
+                             ~~~~~~~~~^~~~~~~~~~~~~~~
+../src/main.xc:240:35: error: invalid lvalue in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ^~~~~~~~
+../src/main.xc:240:44: error: incompatible types in assignment
+      else if(exportCounter == 1) outfname = "testout2.pgm";
+                                  ~~~~~~~~~^~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:24:18 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:24:18 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:24:18 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:30: error: use of undeclared identifer `res'
+      if(exportCounter == 0) res = _openoutpgm( outfname, IMWD, IMHT );
+                             ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:26:03 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:03 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:03 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:06 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:239:30: error: use of undeclared identifer `res'
+      if(exportCounter == 0) res = _openoutpgm( outfname, IMWD, IMHT );
+                             ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:26:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+xmake[1]: *** [bin//game_of_life.xe] Terminated: 15
+xmake: *** [bin//game_of_life.xe] Terminated: 15
+Command canceled
+09:26:39 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+09:26:43 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:43 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:44 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:26:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:32:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:219:53: error: use of undeclared identifer `microworld'
+                                  print( "-%4.1d ", microworld[ i ][j]);
+                                                    ^
+../src/main.xc:219:35: error: unknown function identifier `print' (possibly missing prototype?)
+                                  print( "-%4.1d ", microworld[ i ][j]);
+                                  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:32:51 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:32:51 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:32:51 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:219:35: error: unknown function identifier `print' (possibly missing prototype?)
+                                  print( "-%4.1d ", microWorld[ i ][j]);
+                                  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:33:13 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:13 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:13 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:219:35: error: unknown function identifier `print' (possibly missing prototype?)
+                                  print( "-%4.1d ", microWorld[ i ][j]);
+                                  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:33:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+09:33:26 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:26 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:26 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:33:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:34:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+09:34:04 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:34:04 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:34:04 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:34:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:35:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+09:35:08 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:35:08 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:35:09 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:35:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:40:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:200:15: error: invalid lvalue in assignment
+              tempWorld = world;
+              ^~~~~~~~~
+../src/main.xc:200:25: error: incompatible types in assignment
+              tempWorld = world;
+              ~~~~~~~~~~^~~~~~~
+../src/main.xc:224:15: error: invalid lvalue in assignment
+              world = tempWorld;
+              ^~~~~
+../src/main.xc:224:21: error: incompatible types in assignment
+              world = tempWorld;
+              ~~~~~~^~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:40:21 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:40:22 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:40:22 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:40:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:200:15: error: invalid lvalue in assignment
+              tempWorld = world;
+              ^~~~~~~~~
+../src/main.xc:200:25: error: incompatible types in assignment
+              tempWorld = world;
+              ~~~~~~~~~~^~~~~~~
+../src/main.xc:224:15: error: invalid lvalue in assignment
+              world = tempWorld;
+              ^~~~~
+../src/main.xc:224:21: error: incompatible types in assignment
+              world = tempWorld;
+              ~~~~~~^~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:41:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+09:41:44 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:41:44 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:41:44 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:41:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:43:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+09:43:38 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:43:38 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:43:38 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:43:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:47:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:213:46: error: use of undeclared identifer `temoWorld'
+                          microWorld[2][1] = temoWorld[x+1][y];
+                                             ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:47:19 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:19 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:19 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:213:46: error: use of undeclared identifer `temoWorld'
+                          microWorld[2][1] = temoWorld[x+1][y];
+                                             ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+09:47:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+09:47:34 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:34 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:34 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:47:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+09:50:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+09:50:29 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:50:29 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:50:29 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+09:50:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:03:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+10:03:55 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:03:55 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:03:56 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:04:06 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:06:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:06:20 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:06:20 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:06:20 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:06:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:07:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:07:31 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:07:31 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:07:31 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:07:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:08:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:08:25 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:08:25 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:08:25 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:08:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:08:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:09:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:10:08 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:70:22: error: unknown function identifier `waitMoment' (possibly missing prototype?)
+    if(pattern == 4) waitMoment();
+                     ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+10:10:09 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:09 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:09 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+10:10:42 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:42 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:42 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:10:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:11:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:11:13 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:11:13 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:11:13 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:11:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:11:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+10:12:00 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:12:00 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:12:00 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:12:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:13:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:13:08 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:13:08 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:13:08 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:15:59 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:16:02 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:03 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:03 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:06 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:16:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+10:16:43 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:44 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:44 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:16:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+10:17:15 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+10:17:18 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:17:18 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:17:18 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+10:17:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:00:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:136:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:136:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+12:00:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:00:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:00:55 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+12:00:56 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+12:00:56 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+12:01:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:03:01 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:05:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:15:29 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:16:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:16:06 **** Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:06 **** Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:07 **** Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:16:17 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:16:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:17:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:17:51 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:51 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:51 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:17:53 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:20:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:22:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:24:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:25:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:26:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:27:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:27:27 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:27:27 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:27:27 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+14:27:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:32:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:34:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:303:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:303:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating game_of_life.xe
+Build Complete
+14:35:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:302:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:302:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating game_of_life.xe
+Build Complete
+14:38:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:301:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:301:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted = 0;
+      ^~~~~~
+Creating game_of_life.xe
+Build Complete
+14:39:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:40:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:41:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:42:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:12:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:174:13: error: output to a variable that is neither a channel nor port
+            world[i][j] <: fromDist;
+            ^~~~~~~~~~~
+../src/main.xc:203:17: error: input from a variable that is neither a channel, port nor timer
+                world[i][j] :> fromDist;
+                ^~~~~~~~~~~
+../src/main.xc:203:32: error: invalid lvalue as input destination
+                world[i][j] :> fromDist;
+                               ^~~~~~~~
+../src/main.xc:273:23: error: input from a variable that is neither a channel, port nor timer
+                      world[i][j] :> toWorker;
+                      ^~~~~~~~~~~
+../src/main.xc:273:38: error: invalid lvalue as input destination
+                      world[i][j] :> toWorker;
+                                     ^~~~~~~~
+../src/main.xc:279:23: error: output to a variable that is neither a channel nor port
+                      world[i][j] <: toWorker;
+                      ^~~~~~~~~~~
+../src/main.xc:222:7: warning: unused variable `tempWorld' [-Wunused-variable]
+  int tempWorld[IMHT][IMWD];
+      ^~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:12:09 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:12:10 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:12:10 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:12:59 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:273:23: error: input from a variable that is neither a channel, port nor timer
+                      world[i][j] :> toWorker;
+                      ^~~~~~~~~~~
+../src/main.xc:273:38: error: invalid lvalue as input destination
+                      world[i][j] :> toWorker;
+                                     ^~~~~~~~
+../src/main.xc:279:23: error: output to a variable that is neither a channel nor port
+                      world[i][j] <: toWorker;
+                      ^~~~~~~~~~~
+../src/main.xc:222:7: warning: unused variable `tempWorld' [-Wunused-variable]
+  int tempWorld[IMHT][IMWD];
+      ^~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:13:00 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:00 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:00 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:13:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:15:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:15:50 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:15:50 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:15:50 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:15:54 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:20:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:20:32 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:20:32 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:20:33 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:20:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:21:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:22:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:22:06 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:06 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:06 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:22:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:24:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:32:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:32:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:33:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:34:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:35:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:36:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:36:20 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:36:20 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:36:20 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:36:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:37:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:37:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:20:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:240:14: error: parse error before ':>' token
+          t :> timer_start;
+             ^
+../src/main.xc:212:7: warning: unused variable `tilted' [-Wunused-variable]
+  int tilted;
+      ^~~~~~
+../src/main.xc:214:16: warning: unused variable `timer_start' [-Wunused-variable]
+  unsigned int timer_start;
+               ^~~~~~~~~~~
+../src/main.xc:216:16: warning: unused variable `timer_end' [-Wunused-variable]
+  unsigned int timer_end;
+               ^~~~~~~~~
+../src/main.xc:218:17: warning: unused variable `totalTime' [-Wunused-variable]
+  long long int totalTime = 0;
+                ^~~~~~~~~
+../src/main.xc:253:15: warning: return type defaults to `int' [-Wreturn-type]
+              waitMoment();
+              ^~~~~~~~~~~~
+../src/main.xc:253:15: error: conflicting types for 'waitMoment'
+              waitMoment();
+              ^~~~~~~~~~~~
+../src/main.xc:62:6: note: previous definition of 'waitMoment' was here
+void waitMoment() {
+     ^~~~~~~~~~~~
+../src/main.xc:254:15: error: parse error before "break"
+              break;
+              ^
+../src/main.xc:257:11: error: parse error before "default"
+          default: //Main Processing case
+          ^
+../src/main.xc:259:15: error: parse error before "if"
+              if(tilted == 1){
+              ^
+../src/main.xc:261:19: warning: type defaults to `int' in declaration of `toLEDs' [-Wimplicit-int]
+                  toLEDs <: 8; //Set red LED as game is paused
+                  ^~~~~~
+../src/main.xc:261:19: warning: data definition has no type or storage class [-Wunusual-code]
+                  toLEDs <: 8; //Set red LED as game is paused
+                  ^~~~~~
+../src/main.xc:261:27: error: parse error before '<:' token
+                  toLEDs <: 8; //Set red LED as game is paused
+                          ^
+../src/main.xc:262:19: warning: return type defaults to `int' [-Wreturn-type]
+                  waitMoment();
+                  ^~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "break"
+                  break;
+                  ^
+../src/main.xc:264:15: error: parse error before '}' token
+              }
+              ^
+../src/main.xc:267:22: error: parse error before string constant
+              printf("Processing the world \n");
+                     ^
+../src/main.xc:267:15: warning: return type defaults to `int' [-Wreturn-type]
+              printf("Processing the world \n");
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:267:15: error: conflicting types for 'printf'
+              printf("Processing the world \n");
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:269:30: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+              for(int i = 0; i< IMHT; i++){
+                             ^
+../src/main.xc:269:30: warning: data definition has no type or storage class [-Wunusual-code]
+              for(int i = 0; i< IMHT; i++){
+                             ^
+../src/main.xc:269:31: error: parse error before '<' token
+              for(int i = 0; i< IMHT; i++){
+                              ^
+../src/main.xc:269:39: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+              for(int i = 0; i< IMHT; i++){
+                                      ^
+../src/main.xc:269:39: warning: data definition has no type or storage class [-Wunusual-code]
+              for(int i = 0; i< IMHT; i++){
+                                      ^
+../src/main.xc:309:7: warning: return type defaults to `int' [-Wreturn-type]
+      waitMoment();
+      ^~~~~~~~~~~~
+../src/main.xc:311:7: error: parse error before "for"
+      for( int y = 0; y < IMHT; y++ ) {
+      ^
+../src/main.xc:311:23: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+      for( int y = 0; y < IMHT; y++ ) {
+                      ^
+../src/main.xc:311:23: warning: data definition has no type or storage class [-Wunusual-code]
+      for( int y = 0; y < IMHT; y++ ) {
+                      ^
+../src/main.xc:311:25: error: parse error before '<' token
+      for( int y = 0; y < IMHT; y++ ) {
+                        ^
+../src/main.xc:311:33: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+      for( int y = 0; y < IMHT; y++ ) {
+                                ^
+../src/main.xc:311:33: warning: data definition has no type or storage class [-Wunusual-code]
+      for( int y = 0; y < IMHT; y++ ) {
+                                ^
+../src/main.xc:315:24: error: parse error before "line"
+        _writeoutline( line, IMWD );
+                       ^
+../src/main.xc:315:9: warning: return type defaults to `int' [-Wreturn-type]
+        _writeoutline( line, IMWD );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:315:9: error: conflicting types for '_writeoutline'
+        _writeoutline( line, IMWD );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:316:17: error: parse error before string constant
+        printf( "DataOutStream: Line written...\n" );
+                ^
+../src/main.xc:316:9: warning: return type defaults to `int' [-Wreturn-type]
+        printf( "DataOutStream: Line written...\n" );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:321:15: error: parse error before string constant
+      printf( "DataOutStream: Done...\n" );
+              ^
+../src/main.xc:321:7: warning: return type defaults to `int' [-Wreturn-type]
+      printf( "DataOutStream: Done...\n" );
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:322:14: error: parse error before string constant
+      printf("New image created \n");
+             ^
+../src/main.xc:322:7: warning: return type defaults to `int' [-Wreturn-type]
+      printf("New image created \n");
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:324:7: warning: type defaults to `int' in declaration of `exportCounter' [-Wimplicit-int]
+      exportCounter++;
+      ^~~~~~~~~~~~~
+../src/main.xc:324:7: warning: data definition has no type or storage class [-Wunusual-code]
+      exportCounter++;
+      ^~~~~~~~~~~~~
+../src/main.xc:324:20: error: parse error before '++' token
+      exportCounter++;
+                   ^
+../src/main.xc:326:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:328:1: error: parse error before '}' token
+}
+^
+../src/main.xc:340:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:340:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:340:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:340:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:341:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:343:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:347:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:349:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:357:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:360:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:364:5: error: parse error before "if"
+    if (x>30) {
+    ^
+../src/main.xc:366:7: error: parse error before '}' token
+      }
+      ^
+../src/main.xc:369:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:385:10: error: global variable `c_inIO' has type chan
+    chan c_inIO,            //Channel between Data In and Distributer
+         ^~~~~~
+../src/main.xc:386:10: error: global variable `c_outIO' has type chan
+         c_outIO,           //Channel between Distributer and Data Out
+         ^~~~~~~
+../src/main.xc:387:10: error: global variable `c_control' has type chan
+         c_control,         //Channel between orientation and distributer to check if board tilted
+         ^~~~~~~~~
+../src/main.xc:388:10: error: global variable `c_buttons' has type chan
+         c_buttons,         //Channel passing button data from buttonListener to Distributer
+         ^~~~~~~~~
+../src/main.xc:389:10: error: global variable `c_LEDs' has type chan
+         c_LEDs,            //Channel passing LED data from distributer to showLEDs
+         ^~~~~~
+../src/main.xc:390:10: error: global variable `c_worker' has type chan
+         c_worker;          //Channel between worker and distributer
+         ^~~~~~~~
+../src/main.xc:392:5: error: parse error before "par"
+    par {
+    ^
+../src/main.xc:394:20: error: parse error before "i2c"
+        i2c_master(i2c, 1, p_scl, p_sda, 10);               //server thread providing orientation data
+                   ^
+../src/main.xc:394:9: warning: return type defaults to `int' [-Wreturn-type]
+        i2c_master(i2c, 1, p_scl, p_sda, 10);               //server thread providing orientation data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:394:9: error: conflicting types for 'i2c_master'
+        i2c_master(i2c, 1, p_scl, p_sda, 10);               //server thread providing orientation data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/joshhamwee/Desktop/Year-2/Concurrent-Computing/concurrent-repository/COMS20001/lib_i2c/api/i2c.h:344:19: note: previous declaration of 'i2c_master' was here
+[[distributable]] void i2c_master(server interface i2c_master_if i[n],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:394:9: error: conflicting use of [[distributable]] attribute in declaration of `i2c_master'
+        i2c_master(i2c, 1, p_scl, p_sda, 10);               //server thread providing orientation data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/joshhamwee/Desktop/Year-2/Concurrent-Computing/concurrent-repository/COMS20001/lib_i2c/api/i2c.h:344:19: note: previous declaration is here
+[[distributable]] void i2c_master(server interface i2c_master_if i[n],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:395:21: error: parse error before "i2c"
+        orientation(i2c[0],c_control);                      //client thread reading orientation data
+                    ^
+../src/main.xc:395:9: warning: return type defaults to `int' [-Wreturn-type]
+        orientation(i2c[0],c_control);                      //client thread reading orientation data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:396:22: error: parse error before "infname"
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+                     ^
+../src/main.xc:396:9: warning: return type defaults to `int' [-Wreturn-type]
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:396:9: error: conflicting types for 'DataInStream'
+        DataInStream(infname, c_inIO);                      //thread to read in a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:397:23: error: parse error before "outfname"
+        DataOutStream(outfname, outfname2, c_outIO);                   //thread to write out a PGM image
+                      ^
+../src/main.xc:397:9: warning: return type defaults to `int' [-Wreturn-type]
+        DataOutStream(outfname, outfname2, c_outIO);                   //thread to write out a PGM image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:398:21: error: parse error before "c_inIO"
+        distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs,c_worker); //thread to coordinate work on image
+                    ^
+../src/main.xc:398:9: warning: return type defaults to `int' [-Wreturn-type]
+        distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs,c_worker); //thread to coordinate work on image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:398:9: error: conflicting types for 'distributor'
+        distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs,c_worker); //thread to coordinate work on image
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:209:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc, chanend fromButtons, chanend toLEDs, chanend toWorker)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:399:24: error: parse error before "buttons"
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+                       ^
+../src/main.xc:399:9: warning: return type defaults to `int' [-Wreturn-type]
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:399:9: error: conflicting types for 'buttonListener'
+        buttonListener(buttons,c_buttons);                  //client thread reading button data
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:44:6: note: previous definition of 'buttonListener' was here
+void buttonListener(in port b, chanend toDistributer) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:400:18: error: parse error before "leds"
+        showLEDs(leds,c_LEDs);
+                 ^
+../src/main.xc:400:9: warning: return type defaults to `int' [-Wreturn-type]
+        showLEDs(leds,c_LEDs);
+        ^~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:400:9: error: conflicting types for 'showLEDs'
+        showLEDs(leds,c_LEDs);
+        ^~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:76:5: note: previous definition of 'showLEDs' was here
+int showLEDs(out port p, chanend fromDistributer) {
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:404:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+13:20:52 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:20:52 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:20:52 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:22:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:22:08 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:22:08 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:22:08 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:23:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:214:7: warning: unused variable `numberOfProcesses' [-Wunused-variable]
+  int numberOfProcesses = 0;
+      ^~~~~~~~~~~~~~~~~
+../src/main.xc:216:16: warning: unused variable `timer_start' [-Wunused-variable]
+  unsigned int timer_start;
+               ^~~~~~~~~~~
+../src/main.xc:217:16: warning: unused variable `timer_end' [-Wunused-variable]
+  unsigned int timer_end;
+               ^~~~~~~~~
+../src/main.xc:218:9: warning: unused variable `t' [-Wunused-variable]
+  timer t;
+        ^
+../src/main.xc:219:17: warning: unused variable `totalTime' [-Wunused-variable]
+  long long int totalTime = 0;
+                ^~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:214:7: warning: unused variable `numberOfProcesses' [-Wunused-variable]
+  int numberOfProcesses = 0;
+      ^~~~~~~~~~~~~~~~~
+../src/main.xc:216:16: warning: unused variable `timer_start' [-Wunused-variable]
+  unsigned int timer_start;
+               ^~~~~~~~~~~
+../src/main.xc:217:16: warning: unused variable `timer_end' [-Wunused-variable]
+  unsigned int timer_end;
+               ^~~~~~~~~
+../src/main.xc:218:9: warning: unused variable `t' [-Wunused-variable]
+  timer t;
+        ^
+../src/main.xc:219:17: warning: unused variable `totalTime' [-Wunused-variable]
+  long long int totalTime = 0;
+                ^~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+13:23:40 **** Incremental Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:23:40 **** Incremental Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:23:40 **** Incremental Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+13:25:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:283:61: error: unknown function identifier `pow' (possibly missing prototype?)
+                  long long int tempTime = totalTime * (42/(pow(2,32)-1));
+                                                            ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+13:26:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:27:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+13:28:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:30:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete

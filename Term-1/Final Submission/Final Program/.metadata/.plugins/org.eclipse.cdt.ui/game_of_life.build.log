@@ -1,0 +1,178 @@
+14:58:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:8:10: fatal error: 'i2c.h' file not found
+#include "i2c.h"
+         ^
+../src/main.xc:380:26: error: interface declared inside parameter list
+void orientation( client interface i2c_master_if i2c, chanend toDist) {
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:380:19: error: parameter `i2c' has incomplete type
+void orientation( client interface i2c_master_if i2c, chanend toDist) {
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:381:3: error: use of undeclared identifer `i2c_regop_res_t'
+  i2c_regop_res_t result;
+  ^
+../src/main.xc:381:19: error: parse error before "result"
+  i2c_regop_res_t result;
+                  ^
+../src/main.xc:385:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:385:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:385:16: error: trying to call interface function on incomplete interface type
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:386:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:388:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:392:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:394:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:402:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:405:13: error: unknown function identifier `read_acceleration' (possibly missing prototype?)
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^
+../src/main.xc:409:5: error: parse error before "if"
+    if (x>30) {
+    ^
+../src/main.xc:411:7: error: parse error before '}' token
+      }
+      ^
+../src/main.xc:414:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:434:5: error: parse error before "par"
+    par {
+    ^
+../src/main.xc:436:28: error: parse error before "c_worker"
+        on tile[1]: worker(c_worker[1]);
+                           ^
+../src/main.xc:436:21: error: cannot declare a function in local scope.
+        on tile[1]: worker(c_worker[1]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:436:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[1]: worker(c_worker[1]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:437:28: error: parse error before "c_worker"
+        on tile[1]: worker(c_worker[2]);
+                           ^
+../src/main.xc:437:21: error: cannot declare a function in local scope.
+        on tile[1]: worker(c_worker[2]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:437:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[1]: worker(c_worker[2]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:438:28: error: parse error before "c_worker"
+        on tile[1]: worker(c_worker[3]);
+                           ^
+../src/main.xc:438:21: error: cannot declare a function in local scope.
+        on tile[1]: worker(c_worker[3]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:438:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[1]: worker(c_worker[3]);
+                    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:439:20: error: parse error before "core"
+        on tile[0].core[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                           //server thread providing orientation data
+                   ^
+../src/main.xc:440:33: error: parse error before "i2c"
+        on tile[0]: orientation(i2c[0],c_control);                                          //client thread reading orientation data
+                                ^
+../src/main.xc:440:21: error: cannot declare a function in local scope.
+        on tile[0]: orientation(i2c[0],c_control);                                          //client thread reading orientation data
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:440:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]: orientation(i2c[0],c_control);                                          //client thread reading orientation data
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:441:34: error: parse error before "c_inIO"
+        on tile[0]: DataInStream(c_inIO);                                                   //thread to read in a PGM image
+                                 ^
+../src/main.xc:441:21: error: cannot declare a function in local scope.
+        on tile[0]: DataInStream(c_inIO);                                                   //thread to read in a PGM image
+                    ^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:441:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]: DataInStream(c_inIO);                                                   //thread to read in a PGM image
+                    ^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:442:34: error: parse error before "c_outIO"
+        on tile[0]:DataOutStream(c_outIO);                                                  //thread to write out a PGM image
+                                 ^
+../src/main.xc:442:20: error: cannot declare a function in local scope.
+        on tile[0]:DataOutStream(c_outIO);                                                  //thread to write out a PGM image
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:442:20: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]:DataOutStream(c_outIO);                                                  //thread to write out a PGM image
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:443:32: error: parse error before "c_inIO"
+        on tile[0]:distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs, c_worker);    //thread to coordinate work on image
+                               ^
+../src/main.xc:443:20: error: cannot declare a function in local scope.
+        on tile[0]:distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs, c_worker);    //thread to coordinate work on image
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:443:20: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]:distributor(c_inIO, c_outIO, c_control, c_buttons, c_LEDs, c_worker);    //thread to coordinate work on image
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:444:36: error: parse error before "buttons"
+        on tile[0]: buttonListener(buttons,c_buttons);                                      //client thread reading button data
+                                   ^
+../src/main.xc:444:21: error: cannot declare a function in local scope.
+        on tile[0]: buttonListener(buttons,c_buttons);                                      //client thread reading button data
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:444:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]: buttonListener(buttons,c_buttons);                                      //client thread reading button data
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:445:30: error: parse error before "leds"
+        on tile[0]: showLEDs(leds,c_LEDs);                                                  //thread to output the LED's
+                             ^
+../src/main.xc:445:21: error: cannot declare a function in local scope.
+        on tile[0]: showLEDs(leds,c_LEDs);                                                  //thread to output the LED's
+                    ^~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:445:21: warning: return type defaults to `int' [-Wreturn-type]
+        on tile[0]: showLEDs(leds,c_LEDs);                                                  //thread to output the LED's
+                    ^~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:449:1: error: parse error before '}' token
+}
+^
+../src/main.xc:382:8: warning: unused variable `status_data' [-Wunused-variable]
+  char status_data = 0;
+       ^~~~~~~~~~~
+../src/main.xc:385:3: warning: unused variable `result' [-Wunused-variable]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:405:9: warning: unused variable `x' [-Wunused-variable]
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+        ^
+../src/main.xc:427:10: warning: unused variable `c_inIO' [-Wunused-variable]
+    chan c_inIO,            //Channel between Data In and Distributer
+         ^~~~~~
+../src/main.xc:428:10: warning: unused variable `c_outIO' [-Wunused-variable]
+         c_outIO,           //Channel between Distributer and Data Out
+         ^~~~~~~
+../src/main.xc:429:10: warning: unused variable `c_control' [-Wunused-variable]
+         c_control,         //Channel between orientation and distributer to check if board tilted
+         ^~~~~~~~~
+../src/main.xc:430:10: warning: unused variable `c_buttons' [-Wunused-variable]
+         c_buttons,         //Channel passing button data from buttonListener to Distributer
+         ^~~~~~~~~
+../src/main.xc:431:10: warning: unused variable `c_LEDs' [-Wunused-variable]
+         c_LEDs,            //Channel passing LED data from distributer to showLEDs
+         ^~~~~~
+../src/main.xc:432:10: warning: unused variable `c_worker' [-Wunused-variable]
+         c_worker[4];       //Chanlist for each worker
+         ^~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+
+14:58:20 Build Finished (took 772ms)
+

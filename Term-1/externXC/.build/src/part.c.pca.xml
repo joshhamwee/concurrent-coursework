@@ -1,0 +1,17 @@
+<preCompilationAnalysis file="../src/part.c">
+  <fCall global="true" name="hello"/>
+  <fCall global="true" name="hello.nstackwords"/>
+  <fCall global="true" name="delay.nstackwords"/>
+  <fCall global="true" name="iprintf.nstackwords"/>
+  <fCall global="true" name="hello.maxcores"/>
+  <fCall global="true" name="delay.maxcores"/>
+  <fCall global="true" name="iprintf.maxcores"/>
+  <fCall global="true" name="hello.maxtimers"/>
+  <fCall global="true" name="delay.maxtimers"/>
+  <fCall global="true" name="iprintf.maxtimers"/>
+  <fCall global="true" name="hello.maxchanends"/>
+  <fCall global="true" name="delay.maxchanends"/>
+  <fCall global="true" name="iprintf.maxchanends"/>
+  <fCall global="true" name="delay"/>
+  <fCall global="true" name="iprintf"/>
+</preCompilationAnalysis>

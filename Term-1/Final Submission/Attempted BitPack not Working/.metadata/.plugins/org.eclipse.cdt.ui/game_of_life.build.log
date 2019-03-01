@@ -1,0 +1,124 @@
+14:52:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:208:35: error: incompatible type for argument 1 of `ClearBitQUAD'
+                else ClearBitQUAD(quadrant,i,j);
+                                  ^~~~~~~~
+../src/main.xc:208:35: error: source array smaller than destination for argument 1 of `ClearBitQUAD'
+                else ClearBitQUAD(quadrant,i,j);
+                                  ^~~~~~~~
+../src/main.xc:216:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[0][0] = TestBitQUAD(quadrant,x-1,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:216:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[0][0] = TestBitQUAD(quadrant,x-1,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:217:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[1][0] = TestBitQUAD(quadrant,x,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:217:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[1][0] = TestBitQUAD(quadrant,x,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:218:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[2][0] = TestBitQUAD(quadrant,x+1,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:218:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[2][0] = TestBitQUAD(quadrant,x+1,y-1);
+                                                 ^~~~~~~~
+../src/main.xc:220:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[0][1] = TestBitQUAD(quadrant,x-1,y);
+                                                 ^~~~~~~~
+../src/main.xc:220:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[0][1] = TestBitQUAD(quadrant,x-1,y);
+                                                 ^~~~~~~~
+../src/main.xc:221:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[1][1] = TestBitQUAD(quadrant,x,y);
+                                                 ^~~~~~~~
+../src/main.xc:221:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[1][1] = TestBitQUAD(quadrant,x,y);
+                                                 ^~~~~~~~
+../src/main.xc:222:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[2][1] = TestBitQUAD(quadrant,x+1,y);
+                                                 ^~~~~~~~
+../src/main.xc:222:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[2][1] = TestBitQUAD(quadrant,x+1,y);
+                                                 ^~~~~~~~
+../src/main.xc:224:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[0][2] = TestBitQUAD(quadrant,x-1,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:224:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[0][2] = TestBitQUAD(quadrant,x-1,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:225:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[1][2] = TestBitQUAD(quadrant,x,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:225:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[1][2] = TestBitQUAD(quadrant,x,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:226:50: error: incompatible type for argument 1 of `TestBitQUAD'
+                  microWorld[2][2] = TestBitQUAD(quadrant,x+1,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:226:50: error: source array smaller than destination for argument 1 of `TestBitQUAD'
+                  microWorld[2][2] = TestBitQUAD(quadrant,x+1,y+1);
+                                                 ^~~~~~~~
+../src/main.xc:271:37: error: incompatible type for argument 1 of `ClearBitFULL'
+      if(tempBit == 0) ClearBitFULL(world,x,y);
+                                    ^~~~~
+../src/main.xc:271:37: error: source array smaller than destination for argument 1 of `ClearBitFULL'
+      if(tempBit == 0) ClearBitFULL(world,x,y);
+                                    ^~~~~
+../src/main.xc:323:54: error: incompatible type for argument 1 of `TestBitFULL'
+                      tofromWorker[0] <: TestBitFULL(world,overlap(i),overlap(j));
+                                                     ^~~~~
+../src/main.xc:323:54: error: source array smaller than destination for argument 1 of `TestBitFULL'
+                      tofromWorker[0] <: TestBitFULL(world,overlap(i),overlap(j));
+                                                     ^~~~~
+../src/main.xc:324:54: error: incompatible type for argument 1 of `TestBitFULL'
+                      tofromWorker[1] <: TestBitFULL(world,overlap(i+xQuadrantSize),overlap(j));
+                                                     ^~~~~
+../src/main.xc:324:54: error: source array smaller than destination for argument 1 of `TestBitFULL'
+                      tofromWorker[1] <: TestBitFULL(world,overlap(i+xQuadrantSize),overlap(j));
+                                                     ^~~~~
+../src/main.xc:325:54: error: incompatible type for argument 1 of `TestBitFULL'
+                      tofromWorker[2] <: TestBitFULL(world,overlap(i),overlap(j+quadrantSizeReceive));
+                                                     ^~~~~
+../src/main.xc:325:54: error: source array smaller than destination for argument 1 of `TestBitFULL'
+                      tofromWorker[2] <: TestBitFULL(world,overlap(i),overlap(j+quadrantSizeReceive));
+                                                     ^~~~~
+../src/main.xc:326:54: error: incompatible type for argument 1 of `TestBitFULL'
+                      tofromWorker[3] <: TestBitFULL(world,overlap(i+xQuadrantSize),overlap(j+quadrantSizeReceive));
+                                                     ^~~~~
+../src/main.xc:326:54: error: source array smaller than destination for argument 1 of `TestBitFULL'
+                      tofromWorker[3] <: TestBitFULL(world,overlap(i+xQuadrantSize),overlap(j+quadrantSizeReceive));
+                                                     ^~~~~
+../src/main.xc:343:38: error: incompatible type for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i,j);
+                                     ^~~~~
+../src/main.xc:343:38: error: source array smaller than destination for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i,j);
+                                     ^~~~~
+../src/main.xc:352:38: error: incompatible type for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i+xQuadrantSize,j);
+                                     ^~~~~
+../src/main.xc:352:38: error: source array smaller than destination for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i+xQuadrantSize,j);
+                                     ^~~~~
+../src/main.xc:361:38: error: incompatible type for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i,j+quadrantSizeReceive);
+                                     ^~~~~
+../src/main.xc:361:38: error: source array smaller than destination for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i,j+quadrantSizeReceive);
+                                     ^~~~~
+../src/main.xc:370:38: error: incompatible type for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i+xQuadrantSize,j+quadrantSizeReceive);
+                                     ^~~~~
+../src/main.xc:370:38: error: source array smaller than destination for argument 1 of `ClearBitFULL'
+                        ClearBitFULL(world,i+xQuadrantSize,j+quadrantSizeReceive);
+                                     ^~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+
+14:52:05 Build Finished (took 805ms)
+
