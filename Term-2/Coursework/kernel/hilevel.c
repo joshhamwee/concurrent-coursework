@@ -57,25 +57,6 @@ void schedule( ctx_t* ctx ) {
     }
   }
 
-  // if     ( current->pid == pcb[ 0 ].pid ) {
-  //   dispatch( ctx, &pcb[ 0 ], &pcb[ 1 ] );      // context switch P_1 -> P_2
-  //
-  //   pcb[ 0 ].status = STATUS_READY;             // update   execution status  of P_1
-  //   pcb[ 1 ].status = STATUS_EXECUTING;         // update   execution status  of P_2
-  // }
-  // else if( current->pid == pcb[ 1 ].pid ) {
-  //   dispatch( ctx, &pcb[ 1 ], &pcb[ 2 ] );      // context switch P_4 -> P_5
-  //
-  //   pcb[ 1 ].status = STATUS_READY;             // update   execution status  of P_2
-  //   pcb[ 2 ].status = STATUS_EXECUTING;         // update   execution status  of P_1
-  // }
-  // else if(current->pid == pcb[ 2 ].pid){
-  //   dispatch(ctx, &pcb[ 2 ], &pcb[ 0 ]);
-  //
-  //   pcb[ 2 ].status = STATUS_READY;             // update   execution status  of P_2
-  //   pcb[ 0 ].status = STATUS_EXECUTING;         // update   execution status  of P_1
-  // }
-
   return;
 }
 

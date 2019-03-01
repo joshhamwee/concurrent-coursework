@@ -22,7 +22,6 @@ int is_prime( uint32_t x ) {
 }
 
 void main_P5() {
-  while(1){
     for( int i = 0; i < 25; i++ ) {
       write( STDOUT_FILENO, "P5", 2 );
 
@@ -33,7 +32,7 @@ void main_P5() {
         int r = is_prime( x );
       }
     }
-}
+
 
   exit( EXIT_SUCCESS );
 }
