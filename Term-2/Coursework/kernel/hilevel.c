@@ -47,27 +47,45 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
 void priority_schedule( ctx_t* ctx ) {
   int highest_priority = 0;
   int second_priority = 0;
-  for (size_t i = 0; i < amountPrograms; i++) {
+
+  for (size_t i = 0; i < amountPrograms; i++) {     //Find out which has the highest priority
     if (pcb[i].working_priority > pcb[highest_priority].working_priority) {
       highest_priority = i;
     }
   }
 
-  for (size_t i = 0; i < amountPrograms; i++) {
+
+  for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
     if (i != highest_priority) {
       pcb[i].working_priority++;
     }
   }
 
-  for (size_t i = 0; i < amountPrograms; i++) {
+  for (size_t i = 0; i < amountPrograms; i++) {     //Find out what the next program to be executed is going to be
     if (pcb[i].working_priority > pcb[second_priority].working_priority) {
       second_priority = i;
     }
   }
+  
+  dispatch(ctx, &pcb[highest_priority], &pcb[second_priority]);   // context switch P_i -> P_i+1
+  pcb[highest_priority].status = STATUS_READY;  // update   execution status  of P_i
+  pcb[second_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
 
-  dispatch(ctx, &pcb[highest_priority], &pcb[second_priority]);
-  pcb[highest_priority].status = STATUS_READY;
-  pcb[second_priority].status = STATUS_EXECUTING;
+  return;
+}
+
+void round_robin_schedule( ctx_t* ctx ) {
+
+  for (size_t i = 0; i < amountPrograms; i++) {
+    if     ( current->pid == pcb[ i ].pid ) {
+      int nextProgram = (i+1)%amountPrograms;
+      dispatch( ctx, &pcb[ i ], &pcb[ nextProgram ] );      // context switch P_i -> P_i+1
+
+      pcb[ i ].status = STATUS_READY;             // update   execution status  of P_i
+      pcb[ nextProgram ].status = STATUS_EXECUTING;         // update   execution status  of P_i+1
+      break;
+    }
+  }
 
   return;
 }
@@ -80,15 +98,15 @@ extern void     main_P5();
 extern uint32_t tos_P5;
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
-  /* Initialise two PCBs, representing user processes stemming from execution
-   * of two user programs.  Note in each case that
+  /* Initialise PCBs, representing user processes stemming from execution
+   * of 3 user programs.  Note in each case that
    *
    * - the CPSR value of 0x50 means the processor is switched into USR mode,
    *   with IRQ interrupts enabled, and
    * - the PC and SP values matche the entry point and top of stack.
    */
 
-  memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_1
+  memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
   pcb[ 0 ].pid      = 3;
   pcb[ 0 ].status   = STATUS_CREATED;
   pcb[ 0 ].ctx.cpsr = 0x50;
@@ -97,7 +115,7 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 0 ].static_priority = 5;
   pcb[ 0 ].working_priority = 5;
 
-  memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 1-st PCB = P_2
+  memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 2-nd PCB = P_4
   pcb[ 1 ].pid      = 4;
   pcb[ 1 ].status   = STATUS_CREATED;
   pcb[ 1 ].ctx.cpsr = 0x50;
@@ -106,7 +124,7 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 1 ].static_priority = 3;
   pcb[ 1 ].working_priority = 3;
 
-  memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 1-st PCB = P_2
+  memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 3-rd PCB = P_5
   pcb[ 2 ].pid      = 5;
   pcb[ 2 ].status   = STATUS_CREATED;
   pcb[ 2 ].ctx.cpsr = 0x50;
