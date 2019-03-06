@@ -44,18 +44,30 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   return;
 }
 
-void schedule( ctx_t* ctx ) {
-
+void priority_schedule( ctx_t* ctx ) {
+  int highest_priority = 0;
+  int second_priority = 0;
   for (size_t i = 0; i < amountPrograms; i++) {
-    if     ( current->pid == pcb[ i ].pid ) {
-      int nextProgram = (i+1)%amountPrograms;
-      dispatch( ctx, &pcb[ i ], &pcb[ nextProgram ] );      // context switch P_i -> P_i+1
-
-      pcb[ i ].status = STATUS_READY;             // update   execution status  of P_i
-      pcb[ nextProgram ].status = STATUS_EXECUTING;         // update   execution status  of P_i+1
-      break;
+    if (pcb[i].working_priority > pcb[highest_priority].working_priority) {
+      highest_priority = i;
     }
   }
+
+  for (size_t i = 0; i < amountPrograms; i++) {
+    if (i != highest_priority) {
+      pcb[i].working_priority++;
+    }
+  }
+
+  for (size_t i = 0; i < amountPrograms; i++) {
+    if (pcb[i].working_priority > pcb[second_priority].working_priority) {
+      second_priority = i;
+    }
+  }
+
+  dispatch(ctx, &pcb[highest_priority], &pcb[second_priority]);
+  pcb[highest_priority].status = STATUS_READY;
+  pcb[second_priority].status = STATUS_EXECUTING;
 
   return;
 }
@@ -82,6 +94,8 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 0 ].ctx.cpsr = 0x50;
   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_P3 );
   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_P3  );
+  pcb[ 0 ].static_priority = 5;
+  pcb[ 0 ].working_priority = 5;
 
   memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 1-st PCB = P_2
   pcb[ 1 ].pid      = 4;
@@ -89,6 +103,8 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 1 ].ctx.cpsr = 0x50;
   pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P4 );
   pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P4  );
+  pcb[ 1 ].static_priority = 3;
+  pcb[ 1 ].working_priority = 3;
 
   memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 1-st PCB = P_2
   pcb[ 2 ].pid      = 5;
@@ -96,6 +112,8 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   pcb[ 2 ].ctx.cpsr = 0x50;
   pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
   pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
+  pcb[ 2 ].static_priority = 1;
+  pcb[ 2 ].working_priority = 1;
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
@@ -137,7 +155,7 @@ void hilevel_handler_irq( ctx_t* ctx) {
    // Step 4: handle the interrupt, then clear (or reset) the source.
 
    if( id == GIC_SOURCE_TIMER0 ) {
-     schedule( ctx ); TIMER0->Timer1IntClr = 0x01;
+     priority_schedule( ctx ); TIMER0->Timer1IntClr = 0x01;
    }
 
    // Step 5: write the interrupt identifier to signal we're done.
