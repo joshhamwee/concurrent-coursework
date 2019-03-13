@@ -19,6 +19,7 @@
 
 pcb_t pcb[ 3 ]; pcb_t* current = NULL;
 int amountPrograms = 3;
+int previousProgram = 0;
 
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   char prev_pid = '?', next_pid = '?';
@@ -46,7 +47,6 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
 
 void priority_schedule( ctx_t* ctx ) {
   int highest_priority = 0;
-  int second_priority = 0;
 
   for (size_t i = 0; i < amountPrograms; i++) {     //Find out which has the highest priority
     if (pcb[i].working_priority > pcb[highest_priority].working_priority) {
@@ -61,16 +61,10 @@ void priority_schedule( ctx_t* ctx ) {
     }
   }
 
-  for (size_t i = 0; i < amountPrograms; i++) {     //Find out what the next program to be executed is going to be
-    if (pcb[i].working_priority > pcb[second_priority].working_priority) {
-      second_priority = i;
-    }
-  }
-  
-  dispatch(ctx, &pcb[highest_priority], &pcb[second_priority]);   // context switch P_i -> P_i+1
-  pcb[highest_priority].status = STATUS_READY;  // update   execution status  of P_i
-  pcb[second_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
-
+  dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
+  pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
+  pcb[highest_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
+  previousProgram = highest_priority;
   return;
 }
 
