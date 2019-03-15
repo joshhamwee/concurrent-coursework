@@ -1,0 +1,5 @@
+How to SSH for concurrent coursework:
+
+1) ssh jh17602@snowy.cs.bris.ac.uk
+2) ssh labmachine.wks.bris.ac.uk
+3) Repeat for a second terminal so that both can be used
