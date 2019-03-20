@@ -17,8 +17,8 @@
  *   to execute.
  */
 
-pcb_t pcb[ 3 ]; pcb_t* current = NULL;
-int amountPrograms = 3;
+pcb_t pcb[ 32 ]; pcb_t* current = NULL;
+int amountPrograms = 0;
 int previousProgram = 0;
 
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
@@ -49,23 +49,24 @@ void priority_schedule( ctx_t* ctx ) {
   int highest_priority = 0;
 
   for (size_t i = 0; i < amountPrograms; i++) {     //Find out which has the highest priority
-    if (pcb[i].working_priority > pcb[highest_priority].working_priority) {
+    if (pcb[i].working_priority >= pcb[highest_priority].working_priority) {
       highest_priority = i;
     }
   }
 
-
-  for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
-    if (i != highest_priority) {
-      pcb[i].working_priority++;
+  if (pcb[highest_priority].status != STATUS_EXECUTING) {
+    for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
+      if (i != highest_priority) {
+        pcb[i].working_priority++;
+      }
     }
-  }
 
-  dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
-  pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
-  pcb[highest_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
-  previousProgram = highest_priority;
-  return;
+    dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
+    pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
+    pcb[highest_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
+    previousProgram = highest_priority;
+    return;
+  }
 }
 
 void round_robin_schedule( ctx_t* ctx ) {
@@ -84,12 +85,9 @@ void round_robin_schedule( ctx_t* ctx ) {
   return;
 }
 
-extern void     main_P3();
-extern uint32_t tos_P3;
-extern void     main_P4();
-extern uint32_t tos_P4;
-extern void     main_P5();
-extern uint32_t tos_P5;
+
+extern void main_console();
+extern uint32_t tos_console();
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
   /* Initialise PCBs, representing user processes stemming from execution
@@ -99,33 +97,18 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
    *   with IRQ interrupts enabled, and
    * - the PC and SP values matche the entry point and top of stack.
    */
+   memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   pcb[ 0 ].pid      = 0;
+   pcb[ 0 ].status   = STATUS_CREATED;
+   pcb[ 0 ].ctx.cpsr = 0x50;
+   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_console );
+   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_console  );
+   pcb[ 0 ].static_priority = 1;
+   pcb[ 0 ].working_priority = 1;
 
-  memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
-  pcb[ 0 ].pid      = 3;
-  pcb[ 0 ].status   = STATUS_CREATED;
-  pcb[ 0 ].ctx.cpsr = 0x50;
-  pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_P3 );
-  pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_P3  );
-  pcb[ 0 ].static_priority = 5;
-  pcb[ 0 ].working_priority = 5;
-
-  memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 2-nd PCB = P_4
-  pcb[ 1 ].pid      = 4;
-  pcb[ 1 ].status   = STATUS_CREATED;
-  pcb[ 1 ].ctx.cpsr = 0x50;
-  pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P4 );
-  pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P4  );
-  pcb[ 1 ].static_priority = 3;
-  pcb[ 1 ].working_priority = 3;
-
-  memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 3-rd PCB = P_5
-  pcb[ 2 ].pid      = 5;
-  pcb[ 2 ].status   = STATUS_CREATED;
-  pcb[ 2 ].ctx.cpsr = 0x50;
-  pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
-  pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
-  pcb[ 2 ].static_priority = 1;
-  pcb[ 2 ].working_priority = 1;
+   memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
+   pcb[0].status = STATUS_EXECUTING;
+   amountPrograms = 1;
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
@@ -143,10 +126,8 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
    * since it is is invalid on reset (i.e., no process will previously have
    * been executing).
    */#
-  dispatch( ctx, NULL, &pcb[ 0 ] );
+
   int_enable_irq();
-
-
   return;
 }
 
@@ -177,7 +158,44 @@ void hilevel_handler_irq( ctx_t* ctx) {
    return;
 }
 
-void hilevel_handler_svc(ctx_t* ctx){
+void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
+  /* Based on the identifier (i.e., the immediate operand) extracted from the
+   * svc instruction,
+   *
+   * - read  the arguments from preserved usr mode registers,
+   * - perform whatever is appropriate for this system call, then
+   * - write any return value back to preserved usr mode registers.
+   */
+
+  switch( id ) {
+    case 0x00 : { // 0x00 => yield()
+      schedule( ctx );
+
+      break;
+    }
+
+    case 0x01 : { // 0x01 => write( fd, x, n )
+      int   fd = ( int   )( ctx->gpr[ 0 ] );
+      char*  x = ( char* )( ctx->gpr[ 1 ] );
+      int    n = ( int   )( ctx->gpr[ 2 ] );
+
+      for( int i = 0; i < n; i++ ) {
+        PL011_putc( UART0, *x++, true );
+      }
+
+      ctx->gpr[ 0 ] = n;
+
+      break;
+    }
+
+    default   : { // 0x?? => unknown/unsupported
+      break;
+    }
+  }
 
   return;
 }
+
+//TODO
+// Dynamically allocate stack
+//FORK EXIT
