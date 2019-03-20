@@ -54,12 +54,13 @@ void priority_schedule( ctx_t* ctx ) {
     }
   }
 
-  if (pcb[highest_priority].status != STATUS_EXECUTING) {
-    for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
-      if (i != highest_priority) {
-        pcb[i].working_priority++;
-      }
+  for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
+    if (i != highest_priority) {
+      pcb[i].working_priority++;
     }
+  }
+
+  if (pcb[highest_priority].status != STATUS_EXECUTING) {
 
     dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
     pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
@@ -121,12 +122,6 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
   GICC0->CTLR         = 0x00000001; // enable GIC interface
   GICD0->CTLR         = 0x00000001; // enable GIC distributor
 
-  /* Once the PCBs are initialised, we arbitrarily select the one in the 0-th
-   * PCB to be executed: there is no need to preserve the execution context,
-   * since it is is invalid on reset (i.e., no process will previously have
-   * been executing).
-   */#
-
   int_enable_irq();
   return;
 }
@@ -168,13 +163,13 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
    */
 
   switch( id ) {
-    case 0x00 : { // 0x00 => yield()
-      schedule( ctx );
+    case SYS_YIELD : { // 0x00 => yield()
+      priority_schedule( ctx );
 
       break;
     }
 
-    case 0x01 : { // 0x01 => write( fd, x, n )
+    case SYS_WRITE : { // 0x01 => write( fd, x, n )
       int   fd = ( int   )( ctx->gpr[ 0 ] );
       char*  x = ( char* )( ctx->gpr[ 1 ] );
       int    n = ( int   )( ctx->gpr[ 2 ] );
@@ -184,6 +179,24 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
       }
 
       ctx->gpr[ 0 ] = n;
+
+      break;
+    }
+
+    case SYS_READ : { // 0x02 => read( fd, x, n )
+      int   fd = ( int   )( ctx->gpr[ 0 ] );
+      char*  x = ( char* )( ctx->gpr[ 1 ] );
+      int    n = ( int   )( ctx->gpr[ 2 ] );
+
+      for( int i = 0; i < n; i++ ) {
+        x[i] = PL011_getc(UART0, true);
+      }
+
+      ctx->gpr[ 0 ] = n;
+      break;
+    }
+
+    case SYS_FORK : { // 0x03 => fork()
 
       break;
     }
@@ -198,4 +211,4 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
 
 //TODO
 // Dynamically allocate stack
-//FORK EXIT
+//FORK EXEC EXIT

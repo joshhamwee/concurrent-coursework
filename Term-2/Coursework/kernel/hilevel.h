@@ -14,8 +14,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+
 #include <string.h>
 
+#include "console.h"
 // Include functionality relating to the platform.
 
 #include   "GIC.h"

@@ -25,7 +25,7 @@ SECTIONS {
   /* allocate stack for console           */
   .       = . + 0x00001000;
   tos_console  = .;
-  /* allocate stack for Pall processes           */
+  /* allocate stack for all processes           */
   .       = . + 32 * 0x00001000;
   tos_processes  = .;
 
