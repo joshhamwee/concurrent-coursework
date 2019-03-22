@@ -18,7 +18,7 @@
  */
 
 pcb_t pcb[ 32 ]; pcb_t* current = NULL;
-int amountPrograms = 0;
+int amountProcesses = 0;
 int previousProgram = 0;
 
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
@@ -48,20 +48,19 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
 void priority_schedule( ctx_t* ctx ) {
   int highest_priority = 0;
 
-  for (size_t i = 0; i < amountPrograms; i++) {     //Find out which has the highest priority
+  for (size_t i = 1; i <= amountPrograms; i++) {     //Find out which has the highest priority
     if (pcb[i].working_priority >= pcb[highest_priority].working_priority) {
       highest_priority = i;
     }
   }
 
-  for (size_t i = 0; i < amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
+  for (size_t i = 1; i <= amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
     if (i != highest_priority) {
       pcb[i].working_priority++;
     }
   }
 
-  if (pcb[highest_priority].status != STATUS_EXECUTING) {
-
+  if (pcb[highest_priority].status != STATUS_EXECUTING && pcb[highest_priority].status != STATUS_TERMINATED) {
     dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
     pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
     pcb[highest_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
@@ -86,9 +85,32 @@ void round_robin_schedule( ctx_t* ctx ) {
   return;
 }
 
+int next_empty_pcb(){
+  int next_empty_pos = amountProcesses;
+  int i = 0;
+  while (i < next_empty_pos) {
+    if (pcb[i].status == STATUS_TERMINATED) {
+      next_empty_pos = i;
+      break;
+    }
+    i++;
+  }
+}
+
+void termiate(pcb_t* current, ctx_t* ctx){
+  current.status = STATUS_TERMINATED;
+  current.static_priority = 0;
+  current.working_priority = 0;
+}
 
 extern void main_console();
 extern uint32_t tos_console();
+
+extern void main_P3();
+extern uint32_t tos_P3();
+
+extern void main_P5();
+extern uint32_t tos_P5();
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
   /* Initialise PCBs, representing user processes stemming from execution
@@ -107,9 +129,27 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
    pcb[ 0 ].static_priority = 1;
    pcb[ 0 ].working_priority = 1;
 
-   memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
-   pcb[0].status = STATUS_EXECUTING;
-   amountPrograms = 1;
+   memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   pcb[ 1 ].pid      = 0;
+   pcb[ 1 ].status   = STATUS_CREATED;
+   pcb[ 1 ].ctx.cpsr = 0x50;
+   pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P3 );
+   pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P3  );
+   pcb[ 1 ].static_priority = 3;
+   pcb[ 1 ].working_priority = 3;
+
+   memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   pcb[ 2 ].pid      = 0;
+   pcb[ 2 ].status   = STATUS_CREATED;
+   pcb[ 2 ].ctx.cpsr = 0x50;
+   pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
+   pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
+   pcb[ 2 ].static_priority = 5;
+   pcb[ 2 ].working_priority = 5;
+
+   //memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
+   //pcb[0].status = STATUS_EXECUTING;
+   amountPrograms = 2;
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
@@ -201,6 +241,15 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
       break;
     }
 
+    case SYS_EXIT : { // 0x04 => exit(int x)
+      termiate(current,ctx)
+      break;
+    }
+
+    case SYS_EXEC : { // 0x05 => exec(const void* x)
+
+      break;
+    }
     default   : { // 0x?? => unknown/unsupported
       break;
     }
