@@ -6,21 +6,8 @@
  */
 
 #include "hilevel.h"
-
-/* We assume there will be 2 user processes, stemming from the 2 user programs,
- * and so can
- *
- * - allocate a fixed-size process table (of PCBs), and then maintain an index
- *   into it to keep track of the currently executing process, and
- * - employ a fixed-case of round-robin scheduling: no more processes can be
- *   created, and neither can be terminated, so assume both are always ready
- *   to execute.
- */
-
+int numberprocesses;
 pcb_t pcb[ 32 ]; pcb_t* current = NULL;
-int amountProcesses = 0;
-int previousProgram = 0;
-
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   char prev_pid = '?', next_pid = '?';
 
@@ -32,79 +19,92 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
     memcpy( ctx, &next->ctx, sizeof( ctx_t ) ); // restore  execution context of P_{next}
     next_pid = '0' + next->pid;
   }
-
     PL011_putc( UART0, '[',      true );
     PL011_putc( UART0, prev_pid, true );
     PL011_putc( UART0, '-',      true );
     PL011_putc( UART0, '>',      true );
     PL011_putc( UART0, next_pid, true );
     PL011_putc( UART0, ']',      true );
-
     current = next;                             // update   executing index   to P_{next}
 
   return;
 }
 
-void priority_schedule( ctx_t* ctx ) {
-  int highest_priority = 0;
-
-  for (size_t i = 1; i <= amountPrograms; i++) {     //Find out which has the highest priority
-    if (pcb[i].working_priority >= pcb[highest_priority].working_priority) {
-      highest_priority = i;
+int current_pid(){
+  for (size_t i = 0; i < numberprocesses; i++) {
+    if(pcb[i].pid == current->pid){
+      return i;
     }
-  }
-
-  for (size_t i = 1; i <= amountPrograms; i++) {     //Increase the priority of all the other programs but the one that is about to be executed
-    if (i != highest_priority) {
-      pcb[i].working_priority++;
-    }
-  }
-
-  if (pcb[highest_priority].status != STATUS_EXECUTING && pcb[highest_priority].status != STATUS_TERMINATED) {
-    dispatch(ctx, &pcb[previousProgram], &pcb[highest_priority]);   // context switch P_i -> P_i+1
-    pcb[previousProgram].status = STATUS_READY;  // update   execution status  of P_i
-    pcb[highest_priority].status = STATUS_EXECUTING;  // update   execution status  of P_i+1
-    previousProgram = highest_priority;
-    return;
   }
 }
 
-void round_robin_schedule( ctx_t* ctx ) {
+void age_all(){
+  for (size_t i = 0; i < numberprocesses; i++) {
+    if(pcb[i].status != STATUS_TERMINATED){
+          pcb[i].age++;
+    }
+  }
+}
 
-  for (size_t i = 0; i < amountPrograms; i++) {
-    if     ( current->pid == pcb[ i ].pid ) {
-      int nextProgram = (i+1)%amountPrograms;
-      dispatch( ctx, &pcb[ i ], &pcb[ nextProgram ] );      // context switch P_i -> P_i+1
-
-      pcb[ i ].status = STATUS_READY;             // update   execution status  of P_i
-      pcb[ nextProgram ].status = STATUS_EXECUTING;         // update   execution status  of P_i+1
-      break;
+void priority_schedule( ctx_t* ctx){
+  age_all();
+  int highest_priority_pcb = 0;
+  for (size_t i = 0; i < numberprocesses; i++) {
+    if (pcb[i].priority + pcb[i].age > pcb[highest_priority_pcb].priority + pcb[highest_priority_pcb].priority && (pcb[i].status != STATUS_TERMINATED)) {
+      highest_priority_pcb = i;
     }
   }
 
+  if(current_pid() == highest_priority_pcb){
+    return;
+  }
+  else{
+    dispatch(ctx, &pcb[current_pid()],&pcb[highest_priority_pcb]);
+  }
+
+  pcb[current_pid()].status = STATUS_READY;
+  pcb[highest_priority_pcb].status = STATUS_EXECUTING;
+  pcb[highest_priority_pcb].age = 0;
+  current = &pcb[highest_priority_pcb];
   return;
 }
 
-int next_empty_pcb(){
-  int next_empty_pos = amountProcesses;
-  int i = 0;
-  while (i < next_empty_pos) {
-    if (pcb[i].status == STATUS_TERMINATED) {
-      next_empty_pos = i;
-      break;
-    }
-    i++;
+void HL_write(ctx_t* ctx){
+  int   fd = ( int   )( ctx->gpr[ 0 ] );
+  char*  x = ( char* )( ctx->gpr[ 1 ] );
+  int    n = ( int   )( ctx->gpr[ 2 ] );
+
+  for( int i = 0; i < n; i++ ) {
+    PL011_putc( UART0, *x++, true );
   }
+
+  ctx->gpr[ 0 ] = n;
 }
 
-void termiate(pcb_t* current, ctx_t* ctx){
-  current.status = STATUS_TERMINATED;
-  current.static_priority = 0;
-  current.working_priority = 0;
+void HL_read(ctx_t* ctx){
+  int   fd = ( int   )( ctx->gpr[ 0 ] );
+  char*  x = ( char* )( ctx->gpr[ 1 ] );
+  int    n = ( int   )( ctx->gpr[ 2 ] );
+
+  for( int i = 0; i < n; i++ ) {
+    x[i] = PL011_getc(UART0, true);
+  }
+
+  ctx->gpr[ 0 ] = n;
 }
 
-extern void main_console();
-extern uint32_t tos_console();
+void HL_exit(ctx_t* ctx){
+    pcb[current_pid()].status = STATUS_TERMINATED;
+    pcb[current_pid()].priority = 0;
+    pcb[current_pid()].age = 0;
+    priority_schedule(ctx);
+}
+extern void main_P3();
+extern uint32_t tos_P3();
+extern void main_P4();
+extern uint32_t tos_P4();
+extern void main_P5();
+extern uint32_t tos_P5();
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
   /* Initialise PCBs, representing user processes stemming from execution
@@ -118,14 +118,32 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
    pcb[ 0 ].pid      = 0;
    pcb[ 0 ].status   = STATUS_CREATED;
    pcb[ 0 ].ctx.cpsr = 0x50;
-   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_console );
-   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_console  );
-   pcb[ 0 ].static_priority = 1;
+   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_P3 );
+   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_P3  );
+   pcb[ 0 ].priority = 2;
    pcb[ 0 ].age = 0;
 
-   memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
-   pcb[0].status = STATUS_EXECUTING;
-   amountPrograms = 1;
+   memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   pcb[ 1 ].pid      = 1;
+   pcb[ 1 ].status   = STATUS_CREATED;
+   pcb[ 1 ].ctx.cpsr = 0x50;
+   pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P4 );
+   pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P4  );
+   pcb[ 1 ].priority = 3;
+   pcb[ 1 ].age = 0;
+
+   memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   pcb[ 2 ].pid      = 2;
+   pcb[ 2 ].status   = STATUS_CREATED;
+   pcb[ 2 ].ctx.cpsr = 0x50;
+   pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
+   pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
+   pcb[ 2 ].priority = 4;
+   pcb[ 2 ].age = 0;
+
+  numberprocesses = 3;
+  dispatch(ctx, NULL, &pcb[0]);
+  pcb[0].status = STATUS_EXECUTING;
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
@@ -181,44 +199,24 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
   switch( id ) {
     case SYS_YIELD : { // 0x00 => yield()
       priority_schedule( ctx );
-
       break;
     }
 
     case SYS_WRITE : { // 0x01 => write( fd, x, n )
-      int   fd = ( int   )( ctx->gpr[ 0 ] );
-      char*  x = ( char* )( ctx->gpr[ 1 ] );
-      int    n = ( int   )( ctx->gpr[ 2 ] );
-
-      for( int i = 0; i < n; i++ ) {
-        PL011_putc( UART0, *x++, true );
-      }
-
-      ctx->gpr[ 0 ] = n;
-
+      HL_write(ctx);
       break;
     }
 
     case SYS_READ : { // 0x02 => read( fd, x, n )
-      int   fd = ( int   )( ctx->gpr[ 0 ] );
-      char*  x = ( char* )( ctx->gpr[ 1 ] );
-      int    n = ( int   )( ctx->gpr[ 2 ] );
-
-      for( int i = 0; i < n; i++ ) {
-        x[i] = PL011_getc(UART0, true);
-      }
-
-      ctx->gpr[ 0 ] = n;
-      break;
+      HL_read(ctx);
     }
-
     case SYS_FORK : { // 0x03 => fork()
 
       break;
     }
 
     case SYS_EXIT : { // 0x04 => exit(int x)
-      termiate(current,ctx)
+      HL_exit(ctx);
       break;
     }
 
@@ -233,7 +231,3 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
 
   return;
 }
-
-//TODO
-// Dynamically allocate stack
-//FORK EXEC EXIT

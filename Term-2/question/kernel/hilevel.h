@@ -33,6 +33,8 @@ extern void main_P3();
 extern void main_P4();
 extern void main_P5();
 
+#define maximumPrograms 32
+
 /* The kernel source code is made simpler and more consistent by using
  * some human-readable type definitions:
  *
@@ -64,7 +66,7 @@ typedef struct {
      pid_t    pid;
   status_t status;
      ctx_t    ctx;
-     int      static_priority;
+     int      priority;
      int      age;
 } pcb_t;
 
