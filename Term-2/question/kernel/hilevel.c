@@ -31,6 +31,7 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   return;
 }
 
+//Return the integer pid of the currently executing program
 int current_pid(){
   for (size_t i = 0; i < maximumPrograms; i++) {
     if(pcb[i].pid == current->pid){
@@ -39,6 +40,7 @@ int current_pid(){
   }
 }
 
+//Increase the age of all the processes
 void age_all(){
   for (size_t i = 0; i < maximumPrograms; i++) {
     if(pcb[i].status != STATUS_TERMINATED ){
@@ -47,8 +49,11 @@ void age_all(){
   }
 }
 
+//Schudler for deciding which process to run at a specific time
 void priority_schedule( ctx_t* ctx){
   age_all();
+
+  //Find the program with the highest priority
   int highest_priority_pcb = 0;
   for (size_t i = 0; i < maximumPrograms; i++) {
     if (pcb[i].priority + pcb[i].age >= pcb[highest_priority_pcb].priority + pcb[highest_priority_pcb].age && (pcb[i].status != STATUS_TERMINATED)) {
@@ -56,8 +61,8 @@ void priority_schedule( ctx_t* ctx){
     }
   }
 
-  char check = '0' + highest_priority_pcb;
-  PL011_putc( UART0, check,      true );
+  //Return false if highest priority program is the currently executing one
+  //Otherwise dispatch the highest priority one
   if(current == &pcb[highest_priority_pcb]){
     pcb[highest_priority_pcb].age = 0;
     return;
@@ -66,7 +71,7 @@ void priority_schedule( ctx_t* ctx){
     dispatch(ctx, current, &pcb[highest_priority_pcb]);
   }
 
-
+  //Change status of previous and next process
   pcb[current_pid()].status = STATUS_READY;
   pcb[highest_priority_pcb].status = STATUS_EXECUTING;
   pcb[highest_priority_pcb].age = 0;
@@ -74,18 +79,19 @@ void priority_schedule( ctx_t* ctx){
   return;
 }
 
+//Find position on stack for a given pid
 uint32_t giveStack(pid_t pid){
   uint32_t general = (uint32_t) (&tos_general);
   uint32_t value = general -(0x00001000 * pid);
   return value;
 }
 
+//Duplicate a parent process block into a child block with the same process
 void copy_pcb_fork(pcb_t* parent , pcb_t* child , ctx_t* ctx ){
   memcpy( &child->ctx , ctx , sizeof( ctx_t ));
   child->status = STATUS_READY;
   child->age = 0;
   child->priority = 3;
-
 
   uint32_t offset = giveStack(parent->pid) - ctx->sp;
   child->ctx.sp = giveStack(child->pid) - offset;
@@ -93,6 +99,7 @@ void copy_pcb_fork(pcb_t* parent , pcb_t* child , ctx_t* ctx ){
   return;
 }
 
+//Find the next empty slot within the pcb
 pcb_t* next_empty_pcb(){
   int next_empty_pos = numberprocesses;
   int i = 0;
@@ -114,9 +121,9 @@ void HL_write(ctx_t* ctx){
   for( int i = 0; i < n; i++ ) {
     PL011_putc( UART0, *x++, true );
   }
-
   ctx->gpr[ 0 ] = n;
 }
+
 
 void HL_read(ctx_t* ctx){
   int   fd = ( int   )( ctx->gpr[ 0 ] );
@@ -126,29 +133,33 @@ void HL_read(ctx_t* ctx){
   for( int i = 0; i < n; i++ ) {
     x[i] = PL011_getc(UART0, true);
   }
-
   ctx->gpr[ 0 ] = n;
 }
+
 
 void HL_fork(ctx_t* ctx){
   pcb_t* parent = current;
   pcb_t* child = next_empty_pcb();
+  //Duplicate the parent block
   copy_pcb_fork(parent,child,ctx);
 
   numberprocesses++;
 
+  //Return 0 to the gpr
   child->ctx.gpr[0] = 0;
+  //Set gpr[0] to equal the child pid
   ctx->gpr[0] = child->pid;
 
   return;
 }
 
 void HL_exec(ctx_t* ctx){
-
+  //Specify the new program counter from gpr[0]
   ctx->pc = ctx->gpr[0];
   return;
 }
 
+//End a process once the exit call has been made by making its status terminated
 void HL_exit(ctx_t* ctx){
     pcb[current_pid()].status = STATUS_TERMINATED;
     pcb[current_pid()].priority = 0;
@@ -159,12 +170,8 @@ void HL_exit(ctx_t* ctx){
 
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
-  /* Initialise PCBs, representing user processes stemming from execution
-   * of 3 user programs.  Note in each case that
-   *
-   * - the CPSR value of 0x50 means the processor is switched into USR mode,
-   *   with IRQ interrupts enabled, and
-   * - the PC and SP values matche the entry point and top of stack.
+  /* Initialise the console pcb with the shared pointer pointing to the top of the general stack
+  Also initialise all other PCB's with a status of termiated and the sp pointing to its specific position depending on its pid
    */
    memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = CONSOLE
    pcb[ 0 ].pid      = 0;
@@ -186,9 +193,7 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
      pcb[ i ].age = 0;
    }
 
-  // memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
-  // pcb[0].status = STATUS_EXECUTING;
-  // current = &pcb[0];
+  //Start running the console
   dispatch(ctx, NULL, &pcb[ 0 ]);
   numberprocesses = 1;
 
@@ -218,17 +223,14 @@ void hilevel_handler_irq( ctx_t* ctx) {
 
 
    // Step 2: read  the interrupt identifier so we know the source.
-
    uint32_t id = GICC0->IAR;
 
    // Step 4: handle the interrupt, then clear (or reset) the source.
-
    if( id == GIC_SOURCE_TIMER0 ) {
      priority_schedule( ctx ); TIMER0->Timer1IntClr = 0x01;
    }
 
    // Step 5: write the interrupt identifier to signal we're done.
-
    GICC0->EOIR = id;
 
    return;
