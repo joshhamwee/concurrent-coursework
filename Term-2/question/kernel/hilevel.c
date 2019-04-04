@@ -6,8 +6,9 @@
  */
 
 #include "hilevel.h"
-int numberprocesses;
+int numberprocesses = 0;
 pcb_t pcb[ 32 ]; pcb_t* current = NULL;
+
 void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
   char prev_pid = '?', next_pid = '?';
 
@@ -31,7 +32,7 @@ void dispatch( ctx_t* ctx, pcb_t* prev, pcb_t* next ) {
 }
 
 int current_pid(){
-  for (size_t i = 0; i < numberprocesses; i++) {
+  for (size_t i = 0; i < maximumPrograms; i++) {
     if(pcb[i].pid == current->pid){
       return i;
     }
@@ -39,8 +40,8 @@ int current_pid(){
 }
 
 void age_all(){
-  for (size_t i = 0; i < numberprocesses; i++) {
-    if(pcb[i].status != STATUS_TERMINATED){
+  for (size_t i = 0; i < maximumPrograms; i++) {
+    if(pcb[i].status != STATUS_TERMINATED ){
           pcb[i].age++;
     }
   }
@@ -49,24 +50,60 @@ void age_all(){
 void priority_schedule( ctx_t* ctx){
   age_all();
   int highest_priority_pcb = 0;
-  for (size_t i = 0; i < numberprocesses; i++) {
-    if (pcb[i].priority + pcb[i].age > pcb[highest_priority_pcb].priority + pcb[highest_priority_pcb].priority && (pcb[i].status != STATUS_TERMINATED)) {
+  for (size_t i = 0; i < maximumPrograms; i++) {
+    if (pcb[i].priority + pcb[i].age >= pcb[highest_priority_pcb].priority + pcb[highest_priority_pcb].age && (pcb[i].status != STATUS_TERMINATED)) {
       highest_priority_pcb = i;
     }
   }
 
-  if(current_pid() == highest_priority_pcb){
+  char check = '0' + highest_priority_pcb;
+  PL011_putc( UART0, check,      true );
+  if(current == &pcb[highest_priority_pcb]){
+    pcb[highest_priority_pcb].age = 0;
     return;
   }
   else{
-    dispatch(ctx, &pcb[current_pid()],&pcb[highest_priority_pcb]);
+    dispatch(ctx, current, &pcb[highest_priority_pcb]);
   }
+
 
   pcb[current_pid()].status = STATUS_READY;
   pcb[highest_priority_pcb].status = STATUS_EXECUTING;
   pcb[highest_priority_pcb].age = 0;
   current = &pcb[highest_priority_pcb];
   return;
+}
+
+uint32_t giveStack(pid_t pid){
+  uint32_t general = (uint32_t) (&tos_general);
+  uint32_t value = general -(0x00001000 * pid);
+  return value;
+}
+
+void copy_pcb_fork(pcb_t* parent , pcb_t* child , ctx_t* ctx ){
+  memcpy( &child->ctx , ctx , sizeof( ctx_t ));
+  child->status = STATUS_READY;
+  child->age = 0;
+  child->priority = 3;
+
+
+  uint32_t offset = giveStack(parent->pid) - ctx->sp;
+  child->ctx.sp = giveStack(child->pid) - offset;
+  memcpy((void*)(child->ctx.sp), (void*)(ctx->sp),offset);
+  return;
+}
+
+pcb_t* next_empty_pcb(){
+  int next_empty_pos = numberprocesses;
+  int i = 0;
+  while (i < maximumPrograms) {
+    if (pcb[i].status == STATUS_TERMINATED) {
+      next_empty_pos = i;
+      break;
+    }
+    i++;
+  }
+  return &pcb[next_empty_pos];
 }
 
 void HL_write(ctx_t* ctx){
@@ -93,18 +130,33 @@ void HL_read(ctx_t* ctx){
   ctx->gpr[ 0 ] = n;
 }
 
+void HL_fork(ctx_t* ctx){
+  pcb_t* parent = current;
+  pcb_t* child = next_empty_pcb();
+  copy_pcb_fork(parent,child,ctx);
+
+  numberprocesses++;
+
+  child->ctx.gpr[0] = 0;
+  ctx->gpr[0] = child->pid;
+
+  return;
+}
+
+void HL_exec(ctx_t* ctx){
+
+  ctx->pc = ctx->gpr[0];
+  return;
+}
+
 void HL_exit(ctx_t* ctx){
     pcb[current_pid()].status = STATUS_TERMINATED;
     pcb[current_pid()].priority = 0;
     pcb[current_pid()].age = 0;
     priority_schedule(ctx);
+    return;
 }
-extern void main_P3();
-extern uint32_t tos_P3();
-extern void main_P4();
-extern uint32_t tos_P4();
-extern void main_P5();
-extern uint32_t tos_P5();
+
 
 void hilevel_handler_rst( ctx_t* ctx              ) {
   /* Initialise PCBs, representing user processes stemming from execution
@@ -114,36 +166,31 @@ void hilevel_handler_rst( ctx_t* ctx              ) {
    *   with IRQ interrupts enabled, and
    * - the PC and SP values matche the entry point and top of stack.
    */
-   memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
+   memset( &pcb[ 0 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = CONSOLE
    pcb[ 0 ].pid      = 0;
    pcb[ 0 ].status   = STATUS_CREATED;
    pcb[ 0 ].ctx.cpsr = 0x50;
-   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_P3 );
-   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_P3  );
-   pcb[ 0 ].priority = 2;
+   pcb[ 0 ].ctx.pc   = ( uint32_t )( &main_console );
+   pcb[ 0 ].ctx.sp   = ( uint32_t )( &tos_general  );
+   pcb[ 0 ].priority = 1;
    pcb[ 0 ].age = 0;
 
-   memset( &pcb[ 1 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
-   pcb[ 1 ].pid      = 1;
-   pcb[ 1 ].status   = STATUS_CREATED;
-   pcb[ 1 ].ctx.cpsr = 0x50;
-   pcb[ 1 ].ctx.pc   = ( uint32_t )( &main_P4 );
-   pcb[ 1 ].ctx.sp   = ( uint32_t )( &tos_P4  );
-   pcb[ 1 ].priority = 3;
-   pcb[ 1 ].age = 0;
+   for (size_t i = 1; i < maximumPrograms; i++) {
+     memset( &pcb[ i ], 0, sizeof( pcb_t ) );
+     pcb[ i ].pid      = i;
+     pcb[ i ].status   = STATUS_TERMINATED;
+     pcb[ i ].ctx.cpsr = 0x50;
+     pcb[ i ].ctx.pc   = ( uint32_t )( &main_console );
+     pcb[ i ].ctx.sp   = giveStack(i);
+     pcb[ i ].priority = 0;
+     pcb[ i ].age = 0;
+   }
 
-   memset( &pcb[ 2 ], 0, sizeof( pcb_t ) );     // initialise 0-th PCB = P_3
-   pcb[ 2 ].pid      = 2;
-   pcb[ 2 ].status   = STATUS_CREATED;
-   pcb[ 2 ].ctx.cpsr = 0x50;
-   pcb[ 2 ].ctx.pc   = ( uint32_t )( &main_P5 );
-   pcb[ 2 ].ctx.sp   = ( uint32_t )( &tos_P5  );
-   pcb[ 2 ].priority = 4;
-   pcb[ 2 ].age = 0;
-
-  numberprocesses = 3;
-  dispatch(ctx, NULL, &pcb[0]);
-  pcb[0].status = STATUS_EXECUTING;
+  // memcpy(ctx , &pcb[0].ctx , sizeof(ctx_t));
+  // pcb[0].status = STATUS_EXECUTING;
+  // current = &pcb[0];
+  dispatch(ctx, NULL, &pcb[ 0 ]);
+  numberprocesses = 1;
 
   TIMER0->Timer1Load  = 0x00100000; // select period = 2^20 ticks ~= 1 sec
   TIMER0->Timer1Ctrl  = 0x00000002; // select 32-bit   timer
@@ -209,9 +256,10 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
 
     case SYS_READ : { // 0x02 => read( fd, x, n )
       HL_read(ctx);
+      break;
     }
     case SYS_FORK : { // 0x03 => fork()
-
+      HL_fork(ctx);
       break;
     }
 
@@ -221,7 +269,7 @@ void hilevel_handler_svc( ctx_t* ctx, uint32_t id ) {
     }
 
     case SYS_EXEC : { // 0x05 => exec(const void* x)
-
+      HL_exec(ctx);
       break;
     }
     default   : { // 0x?? => unknown/unsupported

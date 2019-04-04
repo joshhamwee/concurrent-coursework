@@ -33,6 +33,10 @@ extern void main_P3();
 extern void main_P4();
 extern void main_P5();
 
+extern uint32_t tos_general();
+
+extern void main_console();
+
 #define maximumPrograms 32
 
 /* The kernel source code is made simpler and more consistent by using
